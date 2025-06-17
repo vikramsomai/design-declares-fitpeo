@@ -67,7 +67,7 @@
   flex-direction: column;
   gap: 2rem;
 
-  width: 650px;
+  width: 620px;
 }
 
 .filter-section {
@@ -164,7 +164,7 @@
 .card-image-container {
   position: relative;
   overflow: hidden;
-  width: 380px;
+  width: 400px;
   height: 450px;
   transition: transform 0.3s ease;
 }
