@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./Contact.css";
 import Header from "../../components/Header/Header";
-
+import CustomDropdown from "../../components/CustomDropdown/CustomDropdown";
 function Contact() {
   const formRef = useRef(null);
 
@@ -51,24 +51,25 @@ function Contact() {
               <label htmlFor="email">Email:*</label>
               <input type="email" id="email" name="email" required />
             </div>
-            <div className="form-group">
-              <label htmlFor="team">Team to contact:*</label>
-              <select id="team" name="team" required>
-                <option value="">Select team</option>
-                <option value="ireland">D! Ireland</option>
-                <option value="uk">D! UK</option>
-                <option value="brasil">D! Brasil</option>
-                <option value="australia">D! Australia</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="enquiry">Enquiry type:*</label>
-              <select id="enquiry" name="enquiry" required>
-                <option value="">Choose enquiry type</option>
-                <option value="partnership">Partnership</option>
-                <option value="support">Support</option>
-              </select>
-            </div>
+
+            <CustomDropdown
+              label="Team to contact:"
+              name="contact"
+              required={true}
+              options={["D! UK", "D! Ireland", "D! Brasil", "D! Australia"]}
+            />
+            <CustomDropdown
+              label="Enquiry type"
+              name="enquiry"
+              required={true}
+              options={[
+                "Contribute to the toolkit",
+                "Volunteer my time",
+                "Set up a new chapter",
+                "Discuss something else",
+              ]}
+            />
+
             <div className="form-group">
               <textarea
                 id="message"
@@ -81,7 +82,8 @@ function Contact() {
             <div className="checkbox-group">
               <input type="checkbox" id="newsletter" name="newsletter" />
               <label htmlFor="newsletter">
-                I would like to receive newsletter updates.
+                I would like to be added to the Design Declares! newsletter and
+                receive further updates.
               </label>
             </div>
 

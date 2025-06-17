@@ -91,16 +91,17 @@ li a {
   width: 2.5rem;
   display: inline-block;
 }
-li {
+.fab-menu li {
   display: flex;
   align-items: center;
 }
-li:hover {
+.fab-menu li:hover {
   text-decoration: underline;
 }
 @media screen and (max-width: 768px) {
   .fab-toggle {
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
   }
   .fab-menu {
     width: 100%;

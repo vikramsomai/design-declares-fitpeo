@@ -8,12 +8,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 8rem;
-  padding: 2rem;
+  padding: 0rem 2rem 10rem 2rem;
 }
 
 .contact-container {
   border: 1px solid rgb(196 196 196 /1);
-  padding: 3rem;
+  padding: 2.5rem;
   width: 100%;
   max-width: 840px;
 }
@@ -42,7 +42,7 @@
   background-color: transparent;
   color: rgb(196 196 196 /1);
   border: 1px solid rgb(196 196 196 /1);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   font-size: 1rem;
 }
 
@@ -89,6 +89,9 @@ input:autofill {
   justify-content: flex-start;
   gap: 0px;
 }
+.checkbox-group label {
+  font-size: 0.75rem;
+}
 .form-links {
   margin-top: 20px;
 }
@@ -100,11 +103,12 @@ input:autofill {
 } */
 
 .privacy-link {
-  color: var(--text-color);
-  font-size: 0.9rem;
+  color: #fff;
+  font-size: 0.75rem;
   text-decoration: underline;
   margin-top: 1rem;
-  display: inline-block;
+  background-color: #000;
+  /* display: inline-block; */
 }
 
 .submit-button {

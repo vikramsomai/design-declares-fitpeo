@@ -1,12 +1,13 @@
 import "./Home.css";
 import Accordion from "../../components/Accordion/Accordion";
 import Button from "../../components/Button/Button";
-
 import StepCard from "../../components/StepCard/StepCard";
-import { stepsData } from "../../data/setpData"; // Assuming you have a JSON file with the steps data
+import { stepsData } from "../../data/setpData";
 import Chips from "../../components/Chips/Chips";
 import DesignDeclares from "../../components/DesignDeclares/DesignDeclares";
 import EmergencyDeclarationForm from "../../components/EmergencyDeclarationForm/EmergencyDeclarationForm";
+import { AnimatedSection } from "../../components/AnimatedSection";
+
 function Home() {
   return (
     <>
@@ -21,13 +22,17 @@ function Home() {
           </div>
 
           <div className="hero-right">
-            <p>
-              Design Declares is a growing group of designers, design studios,
-              agencies and institutions here to declare a climate and ecological
-              emergency. As part of the global declaration movement, we commit
-              to harnessing the tools of our industry to reimagine, rebuild and
-              heal our world.
-            </p>
+            <AnimatedSection animation="slideUp" delay={1000}>
+              <div>
+                <p>
+                  Design Declares is a growing group of designers, design
+                  studios, agencies and institutions here to declare a climate
+                  and ecological emergency. As part of the global declaration
+                  movement, we commit to harnessing the tools of our industry to
+                  reimagine, rebuild and heal our world.
+                </p>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -42,23 +47,26 @@ function Home() {
             nature. The world is past breaking point; the breakdown has begun...
           </p>
           <div className="accordion-container">
-            <Accordion title="The Role of Design">
-              <>
-                <div>
-                  As designers working within an industry that relies on
-                  production and powers global consumption, we must acknowledge
-                  that we have had a role in bringing us to where we are now,
-                  and that we have an important role in what comes next.
-                </div>
-                <div>
-                  Because designers are makers. We make ideas real. We generate
-                  solutions. We build the world – dreaming up new futures and
-                  bringing them to life in ways that are beautiful, vital and
-                  impossible to resist. It’s not quite magic, but it feels like
-                  it.
-                </div>
-              </>
-            </Accordion>
+            <AnimatedSection animation="slideUp" delay={200}>
+              <Accordion title="The Role of Design">
+                <>
+                  <div>
+                    As designers working within an industry that relies on
+                    production and powers global consumption, we must
+                    acknowledge that we have had a role in bringing us to where
+                    we are now, and that we have an important role in what comes
+                    next.
+                  </div>
+                  <div>
+                    Because designers are makers. We make ideas real. We
+                    generate solutions. We build the world – dreaming up new
+                    futures and bringing them to life in ways that are
+                    beautiful, vital and impossible to resist. It’s not quite
+                    magic, but it feels like it.
+                  </div>
+                </>
+              </Accordion>
+            </AnimatedSection>
             <Accordion title="Time for Change">
               <>
                 <div>
@@ -106,20 +114,24 @@ function Home() {
           <h2>Donate to D!</h2>
         </div>
         <div className="right">
-          <p style={{ fontSize: "1.5rem" }}>
-            Design Declares is a CIC and would not exist without our dedicated
-            team of co-steers, volunteers, and our passionate community working
-            towards change in the creative industry. Your support can go a long
-            way, and helps us too continue the valuable work needed in tackling
-            the climate crises. If you believe in the work we do, please
-            consider a small donation to help us on our journey for a more
-            equitable and just planet.
-          </p>
-          <div className="donation-btn">
-            <Button name="Donate £10" />
-            <Button name="Donate £20" />
-            <Button name="Donate £50" />
-          </div>
+          <AnimatedSection animation="slideUp" delay={200}>
+            <p style={{ fontSize: "1.5rem" }}>
+              Design Declares is a CIC and would not exist without our dedicated
+              team of co-steers, volunteers, and our passionate community
+              working towards change in the creative industry. Your support can
+              go a long way, and helps us too continue the valuable work needed
+              in tackling the climate crises. If you believe in the work we do,
+              please consider a small donation to help us on our journey for a
+              more equitable and just planet.
+            </p>
+          </AnimatedSection>
+          <AnimatedSection animation="slideUp" delay={400}>
+            <div className="donation-btn">
+              <Button name="Donate £10" />
+              <Button name="Donate £20" />
+              <Button name="Donate £50" />
+            </div>
+          </AnimatedSection>
         </div>
       </section>
       <section className="section-two">
@@ -145,12 +157,12 @@ function Home() {
         </div>
       </section>
 
-      <section className="section-two" id="declaration">
+      <section className="section-two declarartion-section" id="declaration">
         <div className="left">
           <h2>Declare Emergency Now</h2>
         </div>
         <div className="right">
-          <p style={{ fontSize: "1.5rem" }}>
+          <p style={{ fontSize: "1.5rem", marginBottom: "4rem" }}>
             Design Declares is open to individuals and institutions working in
             industrial, digital, graphic, communication and service design. To
             declare here, you must be a company with an office in the UK
@@ -168,59 +180,63 @@ function Home() {
           <h2>Latest</h2>
         </div>
         <div className="right">
-          <div className="latest-container">
-            <div className="latest-card">
-              <div className="status">
-                <Chips name="Events" />
-                <Chips name="D! UK" />
-                <p>24.04.2025, 03 PM:30</p>
+          <AnimatedSection animation="scaleIn" delay={400}>
+            <div className="latest-container-section">
+              <div className="latest-card">
+                <div className="status">
+                  <Chips name="Events" />
+                  <Chips name="D! UK" />
+                  <p>24.04.2025, 03 PM:30</p>
+                </div>
+                <div className="description" style={{ width: "400px" }}>
+                  <p>
+                    SD4P Collective: How can Service Design drive meaningful
+                    sustainability impact
+                  </p>
+                </div>
               </div>
-              <div className="description" style={{ width: "400px" }}>
-                <p>
-                  SD4P Collective: How can Service Design drive meaningful
-                  sustainability impact
-                </p>
-              </div>
-            </div>
-            <div className="latest-card">
-              <div
-                className="description"
-                style={{ alignSelf: "center", marginTop: "60px" }}
-              >
-                <p style={{ fontSize: "1rem" }}>
-                  Recap: SD4P Collective working session – 28th March 2025 Read
-                  story
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="latest-container">
-            <div className="latest-card">
-              <div className="status">
-                <Chips name="Events" />
-                <Chips name="D! UK" />
-                <p>24.04.2025, 03 PM:30</p>
-              </div>
-              <div className="description" style={{ width: "400px" }}>
-                <p>
-                  SD4P Collective: How can Service Design drive meaningful
-                  sustainability impact
-                </p>
+              <div className="latest-card">
+                <div
+                  className="description"
+                  style={{ alignSelf: "center", marginTop: "60px" }}
+                >
+                  <p style={{ fontSize: "1rem" }}>
+                    Recap: SD4P Collective working session – 28th March 2025
+                    Read story
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="latest-card">
-              <div
-                className="description "
-                id="right-part"
-                style={{ alignSelf: "center", marginTop: "60px" }}
-              >
-                <p>
-                  Recap: SD4P Collective working session – 28th March 2025 Read
-                  story
-                </p>
+          </AnimatedSection>
+          <AnimatedSection animation="scaleIn" delay={1200}>
+            <div className="latest-container-section">
+              <div className="latest-card">
+                <div className="status">
+                  <Chips name="Events" />
+                  <Chips name="D! UK" />
+                  <p>24.04.2025, 03 PM:30</p>
+                </div>
+                <div className="description" style={{ width: "400px" }}>
+                  <p>
+                    SD4P Collective: How can Service Design drive meaningful
+                    sustainability impact
+                  </p>
+                </div>
+              </div>
+              <div className="latest-card">
+                <div
+                  className="description "
+                  id="right-part"
+                  style={{ alignSelf: "center", marginTop: "60px" }}
+                >
+                  <p>
+                    Recap: SD4P Collective working session – 28th March 2025
+                    Read story
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
           <div style={{ marginTop: "80px", marginLeft: "20px" }}>
             <Button name="See all the latest" />
           </div>
@@ -253,7 +269,7 @@ function Home() {
               <label htmlFor="email">Email:*</label>
               <input type="email" id="email" name="email" required />
             </div>
-            <div className="form-checkbox">
+            <div className="form-checkbox" style={{ marginTop: "2rem" }}>
               <input type="checkbox" id="email" name="email" required />
               <p style={{ fontSize: "1rem" }}>
                 I would like to be added to the Design Declares! newsletter and
@@ -262,7 +278,12 @@ function Home() {
             </div>
             <p>View our Privacy Policy</p>
           </div>
-          <button name="Subscribe" style={{ marginTop: "100px" }} type="submit">
+          <button
+            name="Subscribe"
+            style={{ marginTop: "100px" }}
+            type="submit"
+            className="subscribe-btn"
+          >
             Subscribe
           </button>
         </div>

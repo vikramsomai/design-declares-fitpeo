@@ -66,10 +66,15 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  width: 650px;
 }
 
 .filter-section {
   display: flex;
+  position: sticky;
+  top: 2rem;
+  margin-left: 20px;
   flex-direction: column;
   gap: 1rem;
 }
@@ -87,14 +92,14 @@
 }
 
 .chip {
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: #374151;
+  background-color: rgb(39 39 39 / 1);
   color: #d1d5db;
 }
 
@@ -151,7 +156,7 @@
 
 @media (min-width: 768px) {
   .content-card {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
   }
 }
 
@@ -159,7 +164,8 @@
 .card-image-container {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem;
+  width: 380px;
+  height: 450px;
   transition: transform 0.3s ease;
 }
 
@@ -177,7 +183,7 @@
 
 @media (min-width: 768px) {
   .card-image {
-    height: 20rem;
+    height: 25rem;
   }
 }
 
@@ -233,6 +239,7 @@
 .card-title {
   font-size: 1.5rem;
   font-weight: bold;
+  max-width: 400px;
   line-height: 1.2;
   transition: color 0.3s ease;
   cursor: pointer;
@@ -251,6 +258,8 @@
 .card-description {
   color: #d1d5db;
   line-height: 1.6;
+  max-width: 380px;
+  font-size: 1rem;
 }
 
 /* Fixed menu */
@@ -291,6 +300,7 @@
 
   .filter-title {
     font-size: 1.125rem;
+    font-weight: 400;
   }
 
   .card-title {

@@ -1,8 +1,9 @@
 .form-container {
   min-height: 100vh;
-  background-color: #1a1a1a;
+  border: 1px solid #fff;
+  /* background-color: #1a1a1a; */
   color: #ffffff;
-  padding: 2rem;
+  padding: 2rem 3rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -57,9 +58,12 @@
   display: none;
 }
 
+.checkbox-group label {
+  font-size: 2rem;
+}
 .checkbox-custom {
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   border: 2px solid #666666;
   margin-right: 0.75rem;
   position: relative;
@@ -79,12 +83,12 @@
 .checkbox-label.checked .checkbox-custom::after {
   content: "×";
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: normal;
 }
 
 /* Form Fields */
@@ -274,7 +278,7 @@
   flex: 1;
 }
 
-/* Privacy Link */
+/* Privacy Link
 .privacy-link {
   opacity: 0;
   max-height: 0;
@@ -282,7 +286,7 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(-10px);
   margin-top: 1rem;
-}
+} */
 
 .privacy-link.visible {
   opacity: 1;

@@ -73,14 +73,18 @@ span {
   position: sticky;
   top: 2rem;
   height: fit-content;
-  flex: 1;
-  min-width: 260px;
+  width: 260px;
 }
 
-/* section one */
-
 .section-one {
-  padding-top: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 10rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  gap: 40px;
 }
 
 .section-one,
@@ -120,6 +124,10 @@ span {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+.declarartion-section {
+  margin-top: 2rem;
 }
 
 /* Responsive design */
@@ -168,12 +176,18 @@ span {
   background-color: #fff;
 }
 
-.latest-container {
+.latest-container-section {
   display: flex;
   gap: 30px;
-  flex-wrap: wrap;
   margin-top: 3rem;
   padding: 0 1rem;
+}
+.subscribe-btn {
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
 }
 
 .status {

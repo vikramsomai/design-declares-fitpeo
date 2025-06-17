@@ -244,7 +244,6 @@ export default function EmergencyDeclarationForm() {
             </div>
           </div>
 
-          {/* Dynamic Fields - Now visible by default */}
           <div className="form-fields">
             {/* Business Name Field - Only show when business type selected */}
             {selectedType === "business" && (
@@ -266,8 +265,6 @@ export default function EmergencyDeclarationForm() {
                 )}
               </div>
             )}
-
-            {/* Individual Name Field - Only show when individual type selected */}
             {selectedType === "individual" && (
               <div className="field-container visible">
                 <input

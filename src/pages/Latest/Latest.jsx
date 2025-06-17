@@ -1,8 +1,8 @@
-"use client";
-
+import { AnimatedSection } from "../../components/AnimatedSection";
 import { useState } from "react";
 import { latestData } from "../../data/latestData";
 import "./latest.css";
+import Header from "../../components/Header/Header";
 
 const categories = ["All", "Events", "Case Studies", "Updates", "Perspective"];
 const chapters = ["All", "DI UK", "DI Ireland", "DI Australia"];
@@ -44,17 +44,12 @@ export default function Latest() {
   });
 
   return (
-    <div className="latest-container">
+    <div className="latest-container-section" style={{ marginTop: "0rem" }}>
       <div className="main-content">
-        {/* Header */}
-        <div className="header">
-          <h1 className="logo">D!</h1>
-        </div>
+        <Header />
 
         <div className="content-grid">
-          {/* Left Sidebar - Filters */}
           <div className="sidebar">
-            {/* Categories */}
             <div className="filter-section">
               <h2 className="filter-title">Categories</h2>
               <div className="filter-chips">
@@ -72,7 +67,6 @@ export default function Latest() {
               </div>
             </div>
 
-            {/* View by Chapter */}
             <div className="filter-section">
               <h2 className="filter-title">View by Chapter</h2>
               <div className="filter-chips">
@@ -91,7 +85,6 @@ export default function Latest() {
             </div>
           </div>
 
-          {/* Right Content Area */}
           <div className="content-area">
             <div
               key={animationKey}
@@ -105,50 +98,52 @@ export default function Latest() {
                 </div>
               ) : (
                 filteredData.map((item, index) => (
-                  <div
-                    key={`${item.id}-${animationKey}`}
-                    className="content-card"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                    }}
-                  >
-                    {/* Image */}
-                    <div className="card-image-container">
-                      <img
-                        src={item.image || "/placeholder.svg"}
-                        alt={item.title}
-                        style={{ width: "400px" }}
-                        className="card-image"
-                      />
-                      {/* <Image
+                  <AnimatedSection animation="slideUp" delay={200}>
+                    <div
+                      key={`${item.id}-${animationKey}`}
+                      className="content-card"
+                      style={{
+                        animationDelay: `${index * 0.1}s`,
+                      }}
+                    >
+                      {/* Image */}
+                      <div className="card-image-container">
+                        <img
+                          src={item.image || "/placeholder.svg"}
+                          alt={item.title}
+                          style={{ width: "400px" }}
+                          className="card-image"
+                        />
+                        {/* <Image
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
                         width={600}
                         height={400}
                         className="card-image"
                       /> */}
-                      {/* Overlay label */}
-                      <div className="image-overlay">{item.type}</div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="card-content">
-                      {/* Tags */}
-                      <div className="card-tags">
-                        <span className="tag">{item.category}</span>
-                        <span className="tag">{item.chapter}</span>
-                        <span className="date-time">
-                          {item.date}, {item.time}
-                        </span>
+                        {/* Overlay label */}
+                        <div className="image-overlay">{item.type}</div>
                       </div>
 
-                      {/* Title */}
-                      <h3 className="card-title">{item.title}</h3>
+                      {/* Content */}
+                      <div className="card-content">
+                        {/* Tags */}
+                        <div className="card-tags">
+                          <span className="tag">{item.category}</span>
+                          <span className="tag">{item.chapter}</span>
+                          <span className="date-time">
+                            {item.date}, {item.time}
+                          </span>
+                        </div>
 
-                      {/* Description */}
-                      <p className="card-description">{item.description}</p>
+                        {/* Title */}
+                        <h3 className="card-title">{item.title}</h3>
+
+                        {/* Description */}
+                        <p className="card-description">{item.description}</p>
+                      </div>
                     </div>
-                  </div>
+                  </AnimatedSection>
                 ))
               )}
             </div>
