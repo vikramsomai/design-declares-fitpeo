@@ -47,7 +47,7 @@
   border: 1px solid #000;
   width: 400px;
   display: flex;
-  /* justify-content: center; */
+
   align-items: center;
   /* margin-bottom: 1.5rem; */
   gap: 0px;
@@ -73,7 +73,6 @@
   margin-right: 10px;
   cursor: pointer;
   border: 1px solid #000;
-  /* margin-top: 20px; */
 }
 
 .footer-newsletter button {

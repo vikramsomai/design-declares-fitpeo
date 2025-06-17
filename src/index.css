@@ -4,6 +4,8 @@
   --brand-black: #000000;
   --text-brand-red: rgb(255 99 64 / 1);
   --text-color: rgba(231 231 231 / 1);
+  --border-color: #fff;
+  --bg-color: #000;
 }
 * {
   box-sizing: border-box;

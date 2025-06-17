@@ -1,4 +1,3 @@
-import React from "react";
 import "./StepCard.css";
 
 const StepCard = ({ number, title, description }) => {

@@ -1,4 +1,3 @@
-/* Animation keyframes */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -66,7 +65,6 @@
   padding: 48px 24px;
 }
 
-/* Grid system */
 .grid {
   display: grid;
   gap: 48px;
@@ -134,7 +132,6 @@
   color: #9ca3af;
 }
 
-/* Spacing utilities */
 .space-y > * + * {
   margin-top: 24px;
 }
@@ -155,7 +152,6 @@
   text-align: center;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 12px 32px;
@@ -176,7 +172,6 @@
   transform: scale(1.05);
 }
 
-/* Feature lists */
 .feature-list {
   list-style: none;
 }
@@ -197,7 +192,6 @@
   flex-shrink: 0;
 }
 
-/* Partner logos */
 .partner-grid {
   display: grid;
 
@@ -284,8 +278,6 @@
   font-size: 1.125rem;
   font-weight: bold;
 }
-
-/* Team members */
 
 .team-container {
   display: flex;
@@ -427,7 +419,6 @@
   background-color: #f9fafb;
 }
 
-/* Orange accent */
 .orange-accent {
   position: absolute;
   bottom: 0;

@@ -3,8 +3,7 @@ import "./DesignDeclares.css"; // Import your CSS styles
 import {
   ukSignatories,
   globalSupporters,
-} from "../../data/DesignDeclareData.js"; // Import UK signatories data
-// Import global supporters data
+} from "../../data/DesignDeclareData.js";
 
 export default function DesignDeclares() {
   const [ukCount, setUkCount] = useState(0);

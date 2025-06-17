@@ -7,7 +7,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 
 import "./App.css";
-import { AnimatedSection } from "./components/AnimatedSection";
+
 import Footer from "./components/Footer/Footer";
 import Latest from "./pages/Latest/Latest";
 

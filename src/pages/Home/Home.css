@@ -205,9 +205,6 @@ span {
 
 .description {
   margin-top: 20px;
-  /* font-size: clamp(0.9rem, 4rem, 2rem);
-   */
-
   font-size: 4rem;
 }
 #right-part p {

@@ -1,6 +1,6 @@
 import "./Footer.css";
 import "../Button/Button";
-import Button from "../Button/Button";
+
 function Footer() {
   return (
     <footer className="footer">

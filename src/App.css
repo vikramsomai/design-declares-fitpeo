@@ -4,9 +4,8 @@
   background-color: #000;
   border-bottom-left-radius: 1.7rem;
   border-bottom-right-radius: 1.7rem;
-  padding-bottom: 6rem; /* ⬅ Add this */
-  /* padding: 4rem 2rem; */
-  margin-bottom: 23rem; /* Footer height space */
+  padding-bottom: 6rem;
+  margin-bottom: 23rem;
 }
 .main-content::selection {
   color: #000000;
@@ -80,8 +79,8 @@
   position: relative;
 }
 .fab-menu-wrapper {
-  position: fixed; /* Stick to viewport */
-  bottom: 0px; /* Distance from bottom of screen */
-  right: 20px; /* Distance from right of screen */
-  z-index: 1000; /* Stay above other elements */
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  z-index: 1000;
 }
