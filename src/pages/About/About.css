@@ -517,7 +517,23 @@
 .column ul li:hover {
   text-decoration: none;
 }
-/* Responsive design */
+
+@media (max-width: 768px) {
+  .team-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .team-images {
+    flex-direction: column !important;
+  }
+  .team-card {
+    align-items: center;
+    width: 100%;
+  }
+  .team-card img {
+  }
+}
+
 @media (min-width: 768px) {
   .logo {
     font-size: 4rem;

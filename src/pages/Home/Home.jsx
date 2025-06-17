@@ -256,7 +256,7 @@ function Home() {
             <img
               src="image1.webp"
               alt="Toolkit and Newsletter"
-              style={{ height: "500px", margin: "0px", width: "820px" }}
+              style={{ height: "auto", margin: "0px", width: "100%" }}
             />
             <p style={{ marginTop: "2rem" }}>
               Subscribe to the Design Declares UK newsletter to receive the

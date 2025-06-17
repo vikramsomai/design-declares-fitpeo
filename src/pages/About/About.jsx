@@ -305,8 +305,8 @@ export default function About() {
         className="content-section"
         style={{ marginTop: "15rem", marginBottom: "13rem" }}
       >
-        <div className="container-about">
-          <div className="team-container">
+        <div className="container-about ">
+          <div className="team-container team-group">
             <AnimatedSection animation="slideRight">
               <div>
                 <h2 className="heading-lg">Steering Group</h2>
