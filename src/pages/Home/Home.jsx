@@ -38,7 +38,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section-one">
+      <section className="section-one" style={{ marginTop: "16rem" }}>
         <div className="left">
           <h2>This is Breakdown</h2>
         </div>
@@ -110,7 +110,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section-two">
+      <section className="section-two" style={{ marginTop: "16rem" }}>
         <div className="left">
           <h2>Donate to D!</h2>
         </div>
@@ -135,7 +135,7 @@ function Home() {
           </AnimatedSection>
         </div>
       </section>
-      <section className="section-two">
+      <section className="section-two" style={{ marginTop: "16rem" }}>
         <div className="left">
           <h2>8 Acts of Emergency</h2>
         </div>
@@ -158,7 +158,11 @@ function Home() {
         </div>
       </section>
 
-      <section className="section-two declarartion-section" id="declaration">
+      <section
+        className="section-two declarartion-section"
+        id="declaration"
+        style={{ marginTop: "8rem" }}
+      >
         <div className="left">
           <h2>Declare Emergency Now</h2>
         </div>
@@ -176,7 +180,7 @@ function Home() {
           <EmergencyDeclarationForm />
         </div>
       </section>
-      <section className="section-two">
+      <section className="section-two" style={{ marginTop: "14rem" }}>
         <div className="left">
           <h2>Latest</h2>
         </div>
@@ -243,7 +247,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="section-two">
+      <section className="section-two" style={{ marginTop: "16rem" }}>
         <div className="left">
           <h2>The Design Declares Newsletter and Toolkit</h2>
         </div>
@@ -292,7 +296,7 @@ function Home() {
             </div>
             <button
               name="Subscribe"
-              style={{ marginTop: "100px" }}
+              style={{ marginTop: "40px" }}
               type="submit"
               className="subscribe-btn"
             >
