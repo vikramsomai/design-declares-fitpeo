@@ -181,6 +181,12 @@ li a {
     font-size: 3rem !important;
   }
 }
+
+@media screen and (max-width: 475px) {
+  .fab-container.open {
+    width: 300px;
+  }
+}
 .blurred {
   filter: blur(5px);
   pointer-events: none;

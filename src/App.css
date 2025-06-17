@@ -75,6 +75,12 @@
     margin-bottom: 45rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    margin-bottom: 50rem;
+  }
+}
 .main-content-wrapper {
   position: relative;
 }

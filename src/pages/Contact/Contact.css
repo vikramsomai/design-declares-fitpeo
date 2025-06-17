@@ -160,6 +160,9 @@ input:autofill {
     max-width: 100%;
     width: 100%;
   }
+  .contact-section {
+    padding: 0;
+  }
 
   .form-links,
   .checkbox-group,

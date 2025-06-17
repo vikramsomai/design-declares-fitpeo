@@ -521,10 +521,13 @@
     align-items: center;
     width: 100%;
   }
-  .team-card img {
-  }
 }
 
+@media (max-width: 425px) {
+  .partner-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (min-width: 768px) {
   .logo {
     font-size: 4rem;
