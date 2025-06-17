@@ -1,0 +1,170 @@
+:root {
+  --border-color: #fff;
+  --bg-color: #000;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 8rem;
+  padding: 2rem;
+}
+
+.contact-container {
+  border: 1px solid rgb(196 196 196 /1);
+  padding: 3rem;
+  width: 100%;
+  max-width: 840px;
+}
+.contact-header h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 6px;
+}
+
+.contact-heading {
+  font-size: 3rem;
+  letter-spacing: 6px;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+.form {
+  gap: 0rem;
+}
+
+.form-group {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* margin-bottom: 1.5rem; */
+  gap: 0px;
+  background-color: transparent;
+  color: rgb(196 196 196 /1);
+  border: 1px solid rgb(196 196 196 /1);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.form-group label {
+  font-size: 1.25rem;
+  max-width: 200px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+}
+textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg stroke='white' fill='none' stroke-width='2' viewBox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+textarea::placeholder {
+  color: #ccc;
+}
+input:autofill {
+  background-color: transparent;
+}
+.checkbox-group {
+  margin-top: 30px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0px;
+}
+.form-links {
+  margin-top: 20px;
+}
+
+/* .checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+} */
+
+.privacy-link {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.submit-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  max-width: 200px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #ddd;
+}
+.form-group.invalid {
+  border: 1px solid var(--text-brand-red);
+  transition: border 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-container {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .form-group label {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .form-links,
+  .checkbox-group,
+  .submit-button {
+    width: 100%;
+  }
+
+  .submit-button {
+    max-width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
