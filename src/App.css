@@ -4,6 +4,7 @@
   background-color: #000;
   border-bottom-left-radius: 1.7rem;
   border-bottom-right-radius: 1.7rem;
+  padding-bottom: 6rem; /* ⬅ Add this */
   /* padding: 4rem 2rem; */
   margin-bottom: 23rem; /* Footer height space */
 }

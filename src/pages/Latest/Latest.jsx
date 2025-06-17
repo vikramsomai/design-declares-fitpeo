@@ -106,7 +106,6 @@ export default function Latest() {
                         animationDelay: `${index * 0.1}s`,
                       }}
                     >
-                      {/* Image */}
                       <div className="card-image-container">
                         <img
                           src={item.image || "/placeholder.svg"}
@@ -114,15 +113,6 @@ export default function Latest() {
                           style={{ width: "400px" }}
                           className="card-image"
                         />
-                        {/* <Image
-                        src={item.image || "/placeholder.svg"}
-                        alt={item.title}
-                        width={600}
-                        height={400}
-                        className="card-image"
-                      /> */}
-                        {/* Overlay label */}
-                        <div className="image-overlay">{item.type}</div>
                       </div>
 
                       {/* Content */}

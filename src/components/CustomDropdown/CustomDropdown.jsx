@@ -1,4 +1,3 @@
-// components/CustomDropdown.js
 import { useState, useRef, useEffect } from "react";
 import "./CustomDropdown.css";
 

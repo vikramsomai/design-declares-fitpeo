@@ -9,7 +9,6 @@ export const latestData = [
     date: "30.04.2025",
     time: "04 PM:30",
     image: "latest1.webp",
-    type: "Case Study",
   },
   {
     id: "2",
@@ -21,7 +20,6 @@ export const latestData = [
     date: "24.04.2025",
     time: "03 PM:30",
     image: "latest2.webp",
-    type: "Working Session Recap",
   },
   {
     id: "3",
@@ -33,7 +31,6 @@ export const latestData = [
     date: "10.12.2024",
     time: "08 AM:37",
     image: "latest3.webp",
-    type: "Interview",
   },
   {
     id: "4",
@@ -45,7 +42,6 @@ export const latestData = [
     date: "10.12.2024",
     time: "08 AM:37",
     image: "latest4.webp",
-    type: "Interview",
   },
   {
     id: "5",
@@ -57,7 +53,6 @@ export const latestData = [
     date: "06.12.2024",
     time: "02 PM:30",
     image: "latest5.webp",
-    type: "DI November Event Recap",
   },
   {
     id: "6",
@@ -69,7 +64,6 @@ export const latestData = [
     date: "06.12.2024",
     time: "02 PM:30",
     image: "latest6.webp",
-    type: "DI November Event Recap",
   },
   {
     id: "7",
@@ -81,7 +75,6 @@ export const latestData = [
     date: "15.11.2024",
     time: "11 AM:15",
     image: "latest8.webp",
-    type: "Update",
   },
   {
     id: "8",
@@ -93,7 +86,6 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest7.webp",
-    type: "Workshop",
   },
   {
     id: "9",
@@ -105,7 +97,6 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest9.webp",
-    type: "Workshop",
   },
   {
     id: "10",
@@ -117,7 +108,6 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest10.webp",
-    type: "Workshop",
   },
   {
     id: "11",
@@ -130,7 +120,6 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest11.webp",
-    type: "Workshop",
   },
   {
     id: "12",
@@ -143,7 +132,6 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest12.webp",
-    type: "Workshop",
   },
   {
     id: "13",
@@ -155,7 +143,6 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest13.webp",
-    type: "Workshop",
   },
   {
     id: "14",
@@ -167,7 +154,6 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest14.webp",
-    type: "Workshop",
   },
   {
     id: "15",
@@ -178,6 +164,5 @@ export const latestData = [
     date: "22.10.2024",
     time: "09 AM:00",
     image: "latest15.webp",
-    type: "Workshop",
   },
 ];

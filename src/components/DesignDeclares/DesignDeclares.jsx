@@ -100,7 +100,6 @@ export default function DesignDeclares() {
             </div>
           </section>
 
-          {/* Global Supporters Section */}
           <section className="section">
             <div className="section-header">
               <div ref={globalCounterRef} className="counter">

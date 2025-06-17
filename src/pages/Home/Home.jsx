@@ -13,6 +13,7 @@ function Home() {
     <>
       <section className="hero-section">
         <div className="hero-content">
+          <AnimatedSection animation="scaleIn" delay={1000}></AnimatedSection>
           <div className="hero-left">
             <h1>
               <span className="hero-line">DESIGN</span>
@@ -42,11 +43,11 @@ function Home() {
           <h2>This is Breakdown</h2>
         </div>
         <div className="right">
-          <p style={{ fontSize: "4rem" }}>
+          <p style={{ fontSize: "3.5rem" }}>
             The science is settled. We are in an emergency of climate and
             nature. The world is past breaking point; the breakdown has begun...
           </p>
-          <div className="accordion-container">
+          <div className="accordion-container" style={{ marginTop: "3rem" }}>
             <AnimatedSection animation="slideUp" delay={200}>
               <Accordion title="The Role of Design">
                 <>
@@ -247,45 +248,57 @@ function Home() {
           <h2>The Design Declares Newsletter and Toolkit</h2>
         </div>
         <div className="right">
-          <img
-            src="image1.webp"
-            alt="Toolkit and Newsletter"
-            style={{ height: "500px", margin: "0px", width: "820px" }}
-          />
-          <p style={{ marginTop: "2rem" }}>
-            Subscribe to the Design Declares UK newsletter to receive the latest
-            news and updates. By signing up you will also gain access to The
-            Design Declares Toolkit, a live and evolving Notion site co-created
-            with our community. It is filled with the latest resources and
-            methods to help you on your journey to climate-positive design.
-          </p>
-          <p>
-            Every signatory to Design Declares will receive an access link to
-            the Toolkit. If you are unable to declare emergency quite yet, you
-            can still access the Toolkit - just register below. Email:*
-          </p>
-          <div className="form">
-            <div className="form-group">
-              <label htmlFor="email">Email:*</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div className="form-checkbox" style={{ marginTop: "2rem" }}>
-              <input type="checkbox" id="email" name="email" required />
-              <p style={{ fontSize: "1rem" }}>
-                I would like to be added to the Design Declares! newsletter and
-                receive further updates.
+          <AnimatedSection animation="scaleIn" delay={400}>
+            <img
+              src="image1.webp"
+              alt="Toolkit and Newsletter"
+              style={{ height: "500px", margin: "0px", width: "820px" }}
+            />
+            <p style={{ marginTop: "2rem" }}>
+              Subscribe to the Design Declares UK newsletter to receive the
+              latest news and updates. By signing up you will also gain access
+              to The Design Declares Toolkit, a live and evolving Notion site
+              co-created with our community. It is filled with the latest
+              resources and methods to help you on your journey to
+              climate-positive design.
+            </p>
+            <p>
+              Every signatory to Design Declares will receive an access link to
+              the Toolkit. If you are unable to declare emergency quite yet, you
+              can still access the Toolkit - just register below. Email:*
+            </p>
+            <div className="form">
+              <div className="form-group">
+                <label htmlFor="email">Email:*</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div className="form-checkbox" style={{ marginTop: "2rem" }}>
+                <input type="checkbox" id="email" name="email" required />
+                <p style={{ fontSize: "0.8rem" }}>
+                  I would like to be added to the Design Declares! newsletter
+                  and receive further updates.
+                </p>
+              </div>
+              <p
+                style={{
+                  fontSize: "0.8rem",
+                  marginTop: "2rem",
+                }}
+              >
+                <a href="#" style={{ color: "#fff" }}>
+                  View our Privacy Policy
+                </a>
               </p>
             </div>
-            <p>View our Privacy Policy</p>
-          </div>
-          <button
-            name="Subscribe"
-            style={{ marginTop: "100px" }}
-            type="submit"
-            className="subscribe-btn"
-          >
-            Subscribe
-          </button>
+            <button
+              name="Subscribe"
+              style={{ marginTop: "100px" }}
+              type="submit"
+              className="subscribe-btn"
+            >
+              Subscribe
+            </button>
+          </AnimatedSection>
         </div>
       </section>
       <section className="section-two">

@@ -12,10 +12,7 @@ export const ukSignatories = [
   { name: "ACX", url: "https://arcadia.cx/" },
   { name: "Adele Kelly", url: "https://akcreative.co.uk/" },
   { name: "AdesignStorie", url: "https://www.adesignstorie.com/" },
-  {
-    name: "Advocate Design Agency",
-    url: "https://www.advocatedesign.co.uk/",
-  },
+  { name: "Advocate Design Agency", url: "https://www.advocatedesign.co.uk/" },
   { name: "Aetha Design", url: "https://www.aethadesign.com/" },
   { name: "Aileron Design Ltd", url: "https://www.aileron.design/" },
   { name: "Alan Pitchforth", url: "https://www.alanpitchforth.co.uk/" },
@@ -29,10 +26,7 @@ export const ukSignatories = [
   { name: "ANdy Parker", url: "https://theuxcoach.com/" },
   { name: "Andy Thornton", url: "https://www.linkedin.com/in/thorntonandy/" },
   { name: "Anja Klüver", url: "https://www.kluver.works/" },
-  {
-    name: "Annabelle Vuille",
-    url: "https://www.behance.net/annabellevuille1",
-  },
+  { name: "Annabelle Vuille", url: "https://www.behance.net/annabellevuille1" },
   { name: "Apfel", url: "https://apracticeforeverydaylife.com/" },
   { name: "Applied Works", url: "https://applied.works/" },
   {
@@ -55,10 +49,7 @@ export const ukSignatories = [
   { name: "Breezign", url: "https://www.breezign.co.uk/" },
   { name: "Bright Signals Design", url: "https://brightsignals.co.uk/" },
   { name: "Broadley Creative Ltd", url: "https://broadleycreative.co.uk/" },
-  {
-    name: "Bronwen Rees",
-    url: "https://www.instagram.com/thebronblog/?hl=en",
-  },
+  { name: "Bronwen Rees", url: "https://www.instagram.com/thebronblog/?hl=en" },
   { name: "Buff Motion", url: "https://www.buffmotion.com/" },
   { name: "Butterfly", url: "https://www.butterfly-air.com/" },
   { name: "BuyDesign", url: "https://buydesign.com/" },
@@ -78,10 +69,7 @@ export const globalSupporters = {
       name: "Andy Marks",
       url: "https://www.linkedin.com/company/symbioceneinstitute/",
     },
-    {
-      name: "Arielle Breit",
-      url: "http://www.linkedin.com/in/arielle-breit",
-    },
+    { name: "Arielle Breit", url: "http://www.linkedin.com/in/arielle-breit" },
     { name: "Art Disrupt", url: "https://artdisrupt.com/" },
     { name: "Austin Smidt", url: "http://renystudio.com/austin" },
     {

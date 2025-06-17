@@ -73,7 +73,7 @@ span {
   position: sticky;
   top: 2rem;
   height: fit-content;
-  width: 260px;
+  width: 500px;
 }
 
 .section-one {
@@ -82,6 +82,7 @@ span {
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 10rem;
+
   margin-left: 2rem;
   margin-right: 1rem;
   gap: 40px;
@@ -93,7 +94,6 @@ span {
   margin-top: 10rem;
   margin-left: 2rem;
   margin-right: 1rem;
-  flex-wrap: wrap;
   color: var(--text-color);
   justify-content: space-between;
   align-items: flex-start;
@@ -103,7 +103,6 @@ span {
 .right {
   flex: 2;
   max-width: 840px;
-  width: 100%;
 }
 
 .left h2 {

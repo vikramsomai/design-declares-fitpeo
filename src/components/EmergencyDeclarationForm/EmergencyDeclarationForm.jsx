@@ -1,8 +1,6 @@
-"use client";
-
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import "../EmergencyDeclarationForm/EmergencyDeclarationForm.css";
-
+import CustomDropdown from "../CustomDropdown/CustomDropdown";
 export default function EmergencyDeclarationForm() {
   const [selectedType, setSelectedType] = useState("");
   const [formData, setFormData] = useState({
@@ -21,37 +19,6 @@ export default function EmergencyDeclarationForm() {
 
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
-  const [dropdownOpen, setDropdownOpen] = useState({
-    country: false,
-    discipline: false,
-  });
-
-  const countryRef = useRef(null);
-  const disciplineRef = useRef(null);
-
-  // Countries and disciplines data
-  const countries = [
-    "United Kingdom",
-    "United Arab Emirates",
-    "Ukraine",
-    "Uganda",
-    "Tuvalu",
-    "Turks and Caicos Islands",
-    "Turkmenistan",
-    "Turkey",
-    "Tunisia",
-    "Trinidad and Tobago",
-    "Tonga",
-    "Togo",
-    "The Gambia",
-  ];
-
-  const disciplines = [
-    "Communication Design",
-    "Digital Design",
-    "Service Design",
-    "Product Design",
-  ];
 
   const handleTypeChange = (type) => {
     setSelectedType(type);
@@ -112,30 +79,24 @@ export default function EmergencyDeclarationForm() {
 
     // Validate required fields
     if (!formData.website) {
-      newErrors.website = "Website is required";
       isValid = false;
     }
 
     if (!formData.country) {
-      newErrors.country = "Country is required";
       isValid = false;
     }
 
     if (!formData.discipline) {
-      newErrors.discipline = "Discipline is required";
       isValid = false;
     }
 
     if (!formData.email) {
-      newErrors.email = "Email is required";
       isValid = false;
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
       isValid = false;
     }
 
     if (!formData.dataConsent) {
-      newErrors.dataConsent = "You must consent to continue";
       isValid = false;
     }
 
@@ -153,27 +114,6 @@ export default function EmergencyDeclarationForm() {
       console.log("Form has errors");
     }
   };
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (countryRef.current && !countryRef.current.contains(event.target)) {
-        setDropdownOpen((prev) => ({ ...prev, country: false }));
-      }
-
-      if (
-        disciplineRef.current &&
-        !disciplineRef.current.contains(event.target)
-      ) {
-        setDropdownOpen((prev) => ({ ...prev, discipline: false }));
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <div className="form-container">
@@ -225,9 +165,6 @@ export default function EmergencyDeclarationForm() {
                 <span className="checkbox-custom"></span>
                 As a public institution
               </label>
-            </div>
-
-            <div className="checkbox-row">
               <label
                 className={`checkbox-label ${
                   selectedType === "team" ? "checked" : ""
@@ -242,15 +179,19 @@ export default function EmergencyDeclarationForm() {
                 As a team or department
               </label>
             </div>
+
+            {/* <div className="checkbox-row"></div> */}
           </div>
 
           <div className="form-fields">
             {/* Business Name Field - Only show when business type selected */}
             {selectedType === "business" && (
-              <div className="field-container visible">
+              <div className="form-group visible">
+                <label htmlFor="name" style={{ width: "250px" }}>
+                  Business Name:*
+                </label>
                 <input
                   type="text"
-                  placeholder="Business Name:*"
                   value={formData.businessName}
                   onChange={(e) =>
                     handleInputChange("businessName", e.target.value)
@@ -265,11 +206,15 @@ export default function EmergencyDeclarationForm() {
                 )}
               </div>
             )}
+
+            {/* Individual Name Field - Only show when individual type selected */}
             {selectedType === "individual" && (
-              <div className="field-container visible">
+              <div className="form-group visible">
+                <label htmlFor="individual" style={{ width: "250px" }}>
+                  Individual Name:*
+                </label>
                 <input
                   type="text"
-                  placeholder="Individual Name:*"
                   value={formData.individualName}
                   onChange={(e) =>
                     handleInputChange("individualName", e.target.value)
@@ -287,12 +232,13 @@ export default function EmergencyDeclarationForm() {
               </div>
             )}
 
-            {/* Institution Name Field - Only show when institution type selected */}
             {selectedType === "institution" && (
-              <div className="field-container visible">
+              <div className="form-group visible">
+                <label htmlFor="individual" style={{ width: "280px" }}>
+                  Institution Name:*
+                </label>
                 <input
                   type="text"
-                  placeholder="Institution Name:*"
                   value={formData.institutionName}
                   onChange={(e) =>
                     handleInputChange("institutionName", e.target.value)
@@ -312,10 +258,12 @@ export default function EmergencyDeclarationForm() {
 
             {/* Team Name Field - Only show when team type selected */}
             {selectedType === "team" && (
-              <div className="field-container visible">
+              <div className="form-group visible">
+                <label htmlFor="individual" style={{ width: "250px" }}>
+                  Team Name:*
+                </label>
                 <input
                   type="text"
-                  placeholder="Team Name:*"
                   value={formData.teamName}
                   onChange={(e) =>
                     handleInputChange("teamName", e.target.value)
@@ -332,10 +280,12 @@ export default function EmergencyDeclarationForm() {
             )}
 
             {/* Website Field - Always visible */}
-            <div className="field-container visible">
+            <div className="form-group">
+              <label htmlFor="" style={{ width: "80px" }}>
+                Website:*
+              </label>
               <input
                 type="url"
-                placeholder="Website:*"
                 value={formData.website}
                 onChange={(e) => handleInputChange("website", e.target.value)}
                 onBlur={() => handleBlur("website")}
@@ -348,101 +298,228 @@ export default function EmergencyDeclarationForm() {
               )}
             </div>
 
-            {/* Country Field - Custom dropdown */}
-            <div className="field-container visible" ref={countryRef}>
-              <div
-                className={`custom-select ${
-                  touched.country && errors.country ? "error" : ""
-                }`}
-                onClick={() =>
-                  setDropdownOpen((prev) => ({
-                    ...prev,
-                    country: !prev.country,
-                  }))
-                }
-              >
-                <div className="select-selected">
-                  Country:* {formData.country}
-                </div>
-                <div className="select-arrow"></div>
-                {dropdownOpen.country && (
-                  <div className="select-items">
-                    {countries.map((country) => (
-                      <div
-                        key={country}
-                        className={`select-item ${
-                          formData.country === country ? "selected" : ""
-                        }`}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleInputChange("country", country);
-                          setDropdownOpen((prev) => ({
-                            ...prev,
-                            country: false,
-                          }));
-                        }}
-                      >
-                        {country}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              {touched.country && errors.country && (
-                <div className="error-message">{errors.country}</div>
-              )}
-            </div>
+            <CustomDropdown
+              label="Country"
+              name="country"
+              required={true}
+              options={[
+                "Afghanistan",
+                "Albania",
+                "Algeria",
+                "Andorra",
+                "Angola",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahamas",
+                "Bahrain",
+                "Bangladesh",
+                "Barbados",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bhutan",
+                "Bolivia",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Brazil",
+                "Brunei",
+                "Bulgaria",
+                "Burkina Faso",
+                "Burundi",
+                "Cabo Verde",
+                "Cambodia",
+                "Cameroon",
+                "Canada",
+                "Central African Republic",
+                "Chad",
+                "Chile",
+                "China",
+                "Colombia",
+                "Comoros",
+                "Congo (Congo-Brazzaville)",
+                "Costa Rica",
+                "Croatia",
+                "Cuba",
+                "Cyprus",
+                "Czech Republic",
+                "Democratic Republic of the Congo",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Eritrea",
+                "Estonia",
+                "Eswatini",
+                "Ethiopia",
+                "Fiji",
+                "Finland",
+                "France",
+                "Gabon",
+                "Gambia",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Greece",
+                "Grenada",
+                "Guatemala",
+                "Guinea",
+                "Guinea-Bissau",
+                "Guyana",
+                "Haiti",
+                "Honduras",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Iran",
+                "Iraq",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Ivory Coast",
+                "Jamaica",
+                "Japan",
+                "Jordan",
+                "Kazakhstan",
+                "Kenya",
+                "Kiribati",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Laos",
+                "Latvia",
+                "Lebanon",
+                "Lesotho",
+                "Liberia",
+                "Libya",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Mali",
+                "Malta",
+                "Marshall Islands",
+                "Mauritania",
+                "Mauritius",
+                "Mexico",
+                "Micronesia",
+                "Moldova",
+                "Monaco",
+                "Mongolia",
+                "Montenegro",
+                "Morocco",
+                "Mozambique",
+                "Myanmar",
+                "Namibia",
+                "Nauru",
+                "Nepal",
+                "Netherlands",
+                "New Zealand",
+                "Nicaragua",
+                "Niger",
+                "Nigeria",
+                "North Korea",
+                "North Macedonia",
+                "Norway",
+                "Oman",
+                "Pakistan",
+                "Palau",
+                "Palestine",
+                "Panama",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Philippines",
+                "Poland",
+                "Portugal",
+                "Qatar",
+                "Romania",
+                "Russia",
+                "Rwanda",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Vincent and the Grenadines",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Senegal",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "Somalia",
+                "South Africa",
+                "South Korea",
+                "South Sudan",
+                "Spain",
+                "Sri Lanka",
+                "Sudan",
+                "Suriname",
+                "Sweden",
+                "Switzerland",
+                "Syria",
+                "Taiwan",
+                "Tajikistan",
+                "Tanzania",
+                "Thailand",
+                "Timor-Leste",
+                "Togo",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkey",
+                "Turkmenistan",
+                "Tuvalu",
+                "Uganda",
+                "Ukraine",
+                "United Arab Emirates",
+                "United Kingdom",
+                "United States",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Vatican City",
+                "Venezuela",
+                "Vietnam",
+                "Yemen",
+                "Zambia",
+                "Zimbabwe",
+              ]}
+            />
 
-            {/* Discipline Field - Custom dropdown */}
-            <div className="field-container visible" ref={disciplineRef}>
-              <div
-                className={`custom-select ${
-                  touched.discipline && errors.discipline ? "error" : ""
-                }`}
-                onClick={() =>
-                  setDropdownOpen((prev) => ({
-                    ...prev,
-                    discipline: !prev.discipline,
-                  }))
-                }
-              >
-                <div className="select-selected">
-                  Discipline:* {formData.discipline || ""}
-                </div>
-                <div className="select-arrow"></div>
-                {dropdownOpen.discipline && (
-                  <div className="select-items">
-                    {disciplines.map((discipline) => (
-                      <div
-                        key={discipline}
-                        className={`select-item ${
-                          formData.discipline === discipline ? "selected" : ""
-                        }`}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleInputChange("discipline", discipline);
-                          setDropdownOpen((prev) => ({
-                            ...prev,
-                            discipline: false,
-                          }));
-                        }}
-                      >
-                        {discipline}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              {touched.discipline && errors.discipline && (
-                <div className="error-message">{errors.discipline}</div>
-              )}
-            </div>
-
+            <CustomDropdown
+              label="Discipline"
+              name="Discipline"
+              required={true}
+              options={[
+                "Communication Design",
+                "Digital Design",
+                "Service Design",
+                "Product Design",
+              ]}
+            />
             {/* Email Field */}
-            <div className="field-container visible">
+            <div className="form-group">
+              <label htmlFor="" style={{ width: "70px" }}>
+                Email:*
+              </label>
               <input
                 type="email"
-                placeholder="Email:*"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 onBlur={() => handleBlur("email")}
@@ -502,6 +579,7 @@ export default function EmergencyDeclarationForm() {
               <label className="consent-label">
                 <input
                   type="checkbox"
+                  className="checkbox-custom"
                   checked={formData.newsletterConsent}
                   onChange={(e) =>
                     handleInputChange("newsletterConsent", e.target.checked)
@@ -515,7 +593,6 @@ export default function EmergencyDeclarationForm() {
               </label>
             </div>
 
-            {/* Privacy Policy Link */}
             <div className="privacy-link visible">
               <a href="#" className="privacy-link-text">
                 View our Privacy Policy

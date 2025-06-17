@@ -33,6 +33,8 @@
   z-index: 1000;
   list-style: none;
   padding: 0;
+  height: 250px;
+  overflow: scroll;
   width: 300px;
   margin: 10px;
 }
