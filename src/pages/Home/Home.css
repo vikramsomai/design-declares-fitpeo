@@ -29,7 +29,7 @@
 }
 
 span {
-  line-height: 95%;
+  /* line-height: 95%; */
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -72,8 +72,9 @@ span {
 .left {
   position: sticky;
   top: 2rem;
-  height: fit-content;
+  align-self: flex-start; /* Important for flex layout */
   width: 500px;
+  height: fit-content;
 }
 
 .section-one {
@@ -82,7 +83,6 @@ span {
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 10rem;
-
   margin-left: 2rem;
   margin-right: 1rem;
   gap: 40px;
@@ -93,6 +93,7 @@ span {
   display: flex;
   margin-top: 10rem;
   margin-left: 2rem;
+  flex-wrap: nowrap;
   margin-right: 1rem;
   color: var(--text-color);
   justify-content: space-between;
