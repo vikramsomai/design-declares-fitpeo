@@ -1,7 +1,7 @@
 import { AnimatedSection } from "../../components/AnimatedSection";
 import { useState } from "react";
 import { latestData } from "../../data/latestData";
-import "./latest.css";
+import "./Latest.css";
 import Header from "../../components/Header/Header";
 
 const categories = ["All", "Events", "Case Studies", "Updates", "Perspective"];
