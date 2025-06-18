@@ -53,7 +53,7 @@
 }
 
 .main {
-  padding: 48px 40px;
+  /* padding: 48px 40px; */
   padding-top: 128px;
 }
 
@@ -115,7 +115,7 @@
 
 @media (min-width: 1280px) {
   .signatories-grid {
-    columns: 9;
+    columns: 8;
   }
 }
 
@@ -158,7 +158,7 @@
 
 @media (min-width: 1280px) {
   .supporters-grid {
-    columns: 9;
+    columns: 8;
   }
 }
 

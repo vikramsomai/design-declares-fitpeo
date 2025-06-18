@@ -56,7 +56,6 @@
   background-color: black;
   color: white;
   position: relative;
-  overflow: hidden;
 }
 
 .content-section {
@@ -74,6 +73,12 @@
   grid-template-columns: 1fr;
 }
 
+.sticky-container {
+  position: sticky;
+  top: 8rem;
+  align-self: start; /* Ensures it doesn't stretch full height */
+  z-index: 1;
+}
 .grid-team {
   display: flex;
   gap: 24px;

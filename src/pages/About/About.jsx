@@ -1,101 +1,9 @@
-import { useState, useEffect, useRef } from "react";
 import "./About.css";
 
 import Header from "../../components/Header/Header";
 import { teamMembers } from "../../data/teamMembers";
-function useIntersectionObserver({
-  threshold = 0.1,
-  rootMargin = "0px",
-  triggerOnce = true,
-} = {}) {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const [hasIntersected, setHasIntersected] = useState(false);
-  const ref = useRef(null);
+import { AnimatedSection } from "../../components/AnimatedSection";
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const isElementIntersecting = entry.isIntersecting;
-        setIsIntersecting(isElementIntersecting);
-
-        if (isElementIntersecting && !hasIntersected) {
-          setHasIntersected(true);
-        }
-      },
-      { threshold, rootMargin }
-    );
-
-    observer.observe(element);
-
-    return () => {
-      observer.unobserve(element);
-    };
-  }, [threshold, rootMargin, hasIntersected]);
-
-  return {
-    ref,
-    isIntersecting: triggerOnce ? hasIntersected : isIntersecting,
-  };
-}
-
-function AnimatedSection({
-  children,
-  className = "",
-  animation = "fadeIn",
-  delay = 0,
-}) {
-  const { ref, isIntersecting } = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: "-50px",
-  });
-
-  const getAnimationClasses = () => {
-    const baseClasses = "transition-base";
-
-    if (!isIntersecting) {
-      switch (animation) {
-        case "slideUp":
-          return `${baseClasses} slide-up-hidden`;
-        case "slideLeft":
-          return `${baseClasses} slide-left-hidden`;
-        case "slideRight":
-          return `${baseClasses} slide-right-hidden`;
-        case "scaleIn":
-          return `${baseClasses} scale-hidden`;
-        default:
-          return `${baseClasses} fade-hidden`;
-      }
-    }
-
-    switch (animation) {
-      case "slideUp":
-        return `${baseClasses} slide-up-visible`;
-      case "slideLeft":
-        return `${baseClasses} slide-left-visible`;
-      case "slideRight":
-        return `${baseClasses} slide-right-visible`;
-      case "scaleIn":
-        return `${baseClasses} scale-visible`;
-      default:
-        return `${baseClasses} fade-visible`;
-    }
-  };
-
-  return (
-    <div
-      ref={ref}
-      className={`${getAnimationClasses()} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
-// Main About Page Component
 export default function About() {
   return (
     <div className="page-container">
@@ -103,11 +11,13 @@ export default function About() {
       <section className="content-section">
         <div className="container-about">
           <div className="grid grid-2">
-            <AnimatedSection animation="slideRight" delay={400}>
-              <div>
-                <h2 className="heading-lg">About Design Declares</h2>
-              </div>
-            </AnimatedSection>
+            <div className="sticky-container">
+              <AnimatedSection animation="slideRight" delay={400}>
+                <div className="about-left">
+                  <h2 className="heading-lg">About Design Declares</h2>
+                </div>
+              </AnimatedSection>
+            </div>
 
             <div className="space-y">
               <AnimatedSection animation="slideUp" delay={600}>
@@ -211,12 +121,13 @@ export default function About() {
       <section className="content-section" style={{ marginTop: "12rem" }}>
         <div className="container-about">
           <div className="grid grid-2">
-            <AnimatedSection animation="slideRight">
-              <div>
-                <h2 className="heading-lg">Global Partnerships</h2>
-              </div>
-            </AnimatedSection>
-
+            <div className="sticky-container">
+              <AnimatedSection animation="slideRight">
+                <div>
+                  <h2 className="heading-lg">Global Partnerships</h2>
+                </div>
+              </AnimatedSection>
+            </div>
             <div className="space-y">
               <AnimatedSection animation="slideUp" delay={200}>
                 <p className="text-xl">
@@ -264,13 +175,15 @@ export default function About() {
       <section className="content-section" style={{ marginTop: "12rem" }}>
         <div className="container-about">
           <div className="grid grid-2">
-            <AnimatedSection animation="slideRight">
-              <div>
-                <h2 className="heading-lg" style={{ fontSize: "2rem" }}>
-                  The Designers Behind Design Declares UK
-                </h2>
-              </div>
-            </AnimatedSection>
+            <div className="sticky-container">
+              <AnimatedSection animation="slideRight">
+                <div>
+                  <h2 className="heading-lg" style={{ fontSize: "2rem" }}>
+                    The Designers Behind Design Declares UK
+                  </h2>
+                </div>
+              </AnimatedSection>
+            </div>
 
             <div>
               <AnimatedSection animation="fadeIn" delay={200}>
@@ -312,6 +225,7 @@ export default function About() {
                 <h2 className="heading-lg">Steering Group</h2>
               </div>
             </AnimatedSection>
+
             <div className="team-images">
               {teamMembers.map((team, index) => {
                 return (

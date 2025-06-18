@@ -5,20 +5,20 @@
   right: 0;
   background: var(--text-brand-red);
   color: black;
-  padding: 4rem 5rem;
+  padding: 4rem 2rem;
   z-index: 1;
 }
 
 .footer-columns {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
   margin: auto;
 }
 
 .footer-title h1 {
-  font-size: 3rem;
+  font-size: 4.2rem;
   font-weight: 400;
   font-family: var(--font-heading);
   line-height: 1;
