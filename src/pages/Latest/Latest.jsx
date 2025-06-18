@@ -50,37 +50,39 @@ export default function Latest() {
 
         <div className="content-grid">
           <div className="sidebar">
-            <div className="filter-section">
-              <h2 className="filter-title">Categories</h2>
-              <div className="filter-chips">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => handleCategoryChange(category)}
-                    className={`chip ${
-                      selectedCategory === category ? "chip-active" : ""
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+            <div className="filter-group">
+              <div className="filter-section">
+                <h2 className="filter-title">Categories</h2>
+                <div className="filter-chips">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => handleCategoryChange(category)}
+                      className={`chip ${
+                        selectedCategory === category ? "chip-active" : ""
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div className="filter-section">
-              <h2 className="filter-title">View by Chapter</h2>
-              <div className="filter-chips">
-                {chapters.map((chapter) => (
-                  <button
-                    key={chapter}
-                    onClick={() => handleChapterChange(chapter)}
-                    className={`chip ${
-                      selectedChapter === chapter ? "chip-active" : ""
-                    }`}
-                  >
-                    {chapter}
-                  </button>
-                ))}
+              <div className="filter-section">
+                <h2 className="filter-title">View by Chapter</h2>
+                <div className="filter-chips">
+                  {chapters.map((chapter) => (
+                    <button
+                      key={chapter}
+                      onClick={() => handleChapterChange(chapter)}
+                      className={`chip ${
+                        selectedChapter === chapter ? "chip-active" : ""
+                      }`}
+                    >
+                      {chapter}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

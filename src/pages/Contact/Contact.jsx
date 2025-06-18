@@ -18,7 +18,7 @@ function Contact() {
         if (group) group.classList.add("error");
 
         field.focus();
-        return; // Stop at first invalid field
+        return;
       } else {
         const group = field.closest(".form-group");
         if (group) group.classList.remove("error");

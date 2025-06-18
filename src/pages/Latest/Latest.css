@@ -41,6 +41,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  overflow: visible;
 }
 
 @media (min-width: 1024px) {
@@ -56,11 +57,17 @@
 
   width: 620px;
 }
+.filter-group {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
 .filter-section {
   display: flex;
-  position: sticky;
-  top: 2rem;
+  align-items: flex-start;
   margin-left: 20px;
   flex-direction: column;
   gap: 1rem;
@@ -81,7 +88,7 @@
 .chip {
   padding: 0.3rem 1rem;
   border-radius: 9999px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   border: none;
   cursor: pointer;

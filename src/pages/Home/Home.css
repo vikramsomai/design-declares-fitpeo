@@ -68,23 +68,11 @@ span {
   animation: slideUpFade 1s ease-out 0.6s forwards;
   color: var(--text-brand-red);
 }
-.left {
-  position: sticky;
-  top: 10rem; /* adjust as needed for header offset */
-  width: 500px;
-  /* height: fit-content; REMOVE this */
-  flex-shrink: 0; /* Prevent shrinking on smaller screens */
-}
-
-.right {
-  flex: 2;
-  max-width: 840px;
-}
 
 .section-one {
   display: flex;
   flex-wrap: nowrap;
-  align-items: flex-start;
+  align-items: start;
   justify-content: space-between;
   margin-top: 10rem;
 
@@ -101,14 +89,23 @@ span {
   margin-right: 1rem;
   color: var(--text-color);
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: start;
   gap: 40px;
 }
 
-/* .right {
+.left {
+  position: sticky;
+  top: 4rem; /* offset from top */
+  align-self: start;
+  flex: 1;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.right {
   flex: 2;
   max-width: 840px;
-} */
+}
 
 .left h2 {
   font-size: clamp(1.2rem, 3vw, 1.5rem);

@@ -52,8 +52,6 @@ function App() {
       <div className="global-chapter"></div>
 
       <Router>
-        {/* <Header /> */}
-
         <div
           className={`main-content-wrapper`}
           style={{ position: "relative" }}
@@ -81,7 +79,7 @@ function App() {
           </div>
         </div>
 
-        <Footer />
+        <Footer menuOpen={isMenuOpen} />
       </Router>
 
       {showChapterOverlay && (

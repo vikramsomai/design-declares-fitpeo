@@ -1,9 +1,9 @@
 import "./Footer.css";
 import "../Button/Button";
 
-function Footer() {
+function Footer({ menuOpen }) {
   return (
-    <footer className="footer">
+    <footer className={`footer ${menuOpen ? "blurred" : ""}`}>
       <div className="footer-columns">
         <div className="footer-title">
           <h1>
