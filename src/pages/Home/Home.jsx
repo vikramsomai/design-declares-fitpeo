@@ -3,27 +3,61 @@ import Accordion from "../../components/Accordion/Accordion";
 import Button from "../../components/Button/Button";
 import StepCard from "../../components/StepCard/StepCard";
 import { stepsData } from "../../data/setpData";
+import { useEffect, useState } from "react";
 import Chips from "../../components/Chips/Chips";
 import DesignDeclares from "../../components/DesignDeclares/DesignDeclares";
 import EmergencyDeclarationForm from "../../components/EmergencyDeclarationForm/EmergencyDeclarationForm";
 import { AnimatedSection } from "../../components/AnimatedSection";
 
 function Home() {
+  const [fadeOut, setFadeOut] = useState(false);
+  const [hideCompletely, setHideCompletely] = useState(false);
+
+  useEffect(() => {
+    // Start fading out after 1 second
+    const fadeTimer = setTimeout(() => {
+      setFadeOut(true);
+    }, 1000);
+
+    // Remove from DOM after fade-out completes (e.g., after 0.8s)
+    const hideTimer = setTimeout(() => {
+      setHideCompletely(true);
+    }, 1800); // 1000ms + 800ms fade duration
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
   return (
     <>
       <section className="hero-section">
         <div className="hero-content">
-          <AnimatedSection animation="scaleIn" delay={1000}></AnimatedSection>
           <div className="hero-left">
             <h1>
-              <span className="hero-line">DESIGN</span>
-              <span className="hero-line">DECLARES</span>
-              <span className="text-brand-red hero-line">UK</span>
+              {!hideCompletely && (
+                <span
+                  style={{ display: "flex", letterSpacing: "6px" }}
+                  className={`hero-line d-logo ${fadeOut ? "fade-out" : ""}`}
+                >
+                  <AnimatedSection animation="slideUp" delay={200}>
+                    D
+                  </AnimatedSection>
+                  <AnimatedSection animation="slideUp" delay={900}>
+                    !
+                  </AnimatedSection>
+                </span>
+              )}
+              <AnimatedSection animation="slideUp" delay={2000}>
+                <span className="hero-line">DESIGN</span>
+                <span className="hero-line">DECLARES</span>
+                <span className="text-brand-red hero-line">UK</span>
+              </AnimatedSection>
             </h1>
           </div>
 
           <div className="hero-right">
-            <AnimatedSection animation="slideUp" delay={1000}>
+            <AnimatedSection animation="slideUp" delay={3000}>
               <div>
                 <p>
                   Design Declares is a growing group of designers, design

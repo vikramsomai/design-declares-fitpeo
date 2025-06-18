@@ -34,13 +34,13 @@ function Contact() {
       <Header />
       <section className="contact-section">
         <div className="contact-header">
-          <AnimatedSection animation="slideUp" delay={100}>
+          <AnimatedSection animation="slideUp" delay={200}>
             <h1 className="contact-title">Contact</h1>
           </AnimatedSection>
         </div>
 
         <div className="contact-container">
-          <AnimatedSection animation="slideUp" delay={100}>
+          <AnimatedSection animation="slideUp" delay={200}>
             <h2 className="contact-heading">Send Us A Message</h2>
             <form
               className="form"

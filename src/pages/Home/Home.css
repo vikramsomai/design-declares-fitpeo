@@ -68,12 +68,17 @@ span {
   animation: slideUpFade 1s ease-out 0.6s forwards;
   color: var(--text-brand-red);
 }
-
 .left {
   position: sticky;
-  top: 2rem;
-  height: fit-content;
+  top: 10rem; /* adjust as needed for header offset */
   width: 500px;
+  /* height: fit-content; REMOVE this */
+  flex-shrink: 0; /* Prevent shrinking on smaller screens */
+}
+
+.right {
+  flex: 2;
+  max-width: 840px;
 }
 
 .section-one {
@@ -100,10 +105,10 @@ span {
   gap: 40px;
 }
 
-.right {
+/* .right {
   flex: 2;
   max-width: 840px;
-}
+} */
 
 .left h2 {
   font-size: clamp(1.2rem, 3vw, 1.5rem);
@@ -226,4 +231,17 @@ span {
   gap: 10px;
   align-items: center;
   font-size: clamp(0.9rem, 2vw, 1rem);
+}
+.d-logo {
+  display: inline-block;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
