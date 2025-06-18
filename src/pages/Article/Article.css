@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.article-container {
+  min-height: 100vh;
+  margin-left: auto;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.header {
+  padding: 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.menu-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.plus-icon {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.declare-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.declare-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Main Content */
+.main-content-article {
+  padding-left: 5rem;
+  /* padding: 0 1.5rem 3rem; */
+}
+
+/* Article Header */
+.article-header {
+  max-width: 64rem;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.article-title {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 40rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.badge {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #404040;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.date {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+}
+
+.share-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-left: auto;
+  transition: background-color 0.2s ease;
+}
+
+.share-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hero Section */
+.hero-section {
+  margin-bottom: 3rem;
+}
+
+.hero-image-container {
+  position: relative;
+  margin-left: 1rem;
+  max-width: 64rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.case-study-label {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Article Content */
+.article-content {
+  max-width: 55rem;
+}
+
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.content-text {
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+.content-text p {
+  margin-bottom: 1.5rem;
+}
+
+.content-text em {
+  font-style: italic;
+}
+
+.content-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #cccccc;
+}
+
+.content-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Article Footer */
+.article-footer {
+  border-top: 1px solid #1f1f1f;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .article-title {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+
+  .section-title {
+    font-size: 3.5rem;
+  }
+
+  .subsection-title {
+    font-size: 2rem;
+  }
+
+  .hero-image {
+    height: 40rem;
+    width: 42rem;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .main-content {
+    padding: 0 1rem 2rem;
+  }
+
+  .article-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .share-btn {
+    margin-left: 0;
+    align-self: stretch;
+  }
+
+  .header-actions {
+    gap: 0.75rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+}

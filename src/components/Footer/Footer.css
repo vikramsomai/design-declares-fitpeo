@@ -45,15 +45,15 @@
 }
 .form-group-footer {
   border: 1px solid #000;
-  width: 400px;
+  width: 450px;
   display: flex;
-
+  margin-top: 1rem;
   align-items: center;
   /* margin-bottom: 1.5rem; */
   gap: 0px;
   background-color: transparent;
-  padding: 0.7rem 1rem;
-  font-size: 1rem;
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
 }
 .form-group-footer:focus {
   border: 1px solid #fff;
@@ -65,7 +65,7 @@
   border: none;
 }
 .footer-newsletter h3 {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: #000;
   font-weight: 600;
 }
@@ -97,7 +97,8 @@
   text-align: center;
 }
 .footer-note p {
-  width: 850px;
+  width: 890px;
+  margin-bottom: 20px;
   text-align: left;
 }
 .checkbox-box {
@@ -134,8 +135,8 @@
   top: 1px;
 }
 .footer-btn {
-  padding: 2.4rem 3rem;
-  font-size: 1rem;
+  padding: 3rem 3rem;
+  font-size: 1.25rem;
   border-radius: 25px;
   margin-top: 40px;
   background-color: #fff !important;

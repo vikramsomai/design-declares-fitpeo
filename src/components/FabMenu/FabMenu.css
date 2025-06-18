@@ -5,15 +5,20 @@
   font-size: 1.5rem;
   position: absolute;
   color: #000;
-  width: 200px;
+  width: 220px;
   z-index: 100;
   border: 1px solid #000;
   transition: width 0.3s ease;
 }
 
 .fab-container.open {
-  width: 400px;
+  width: 420px;
 }
+
+.fab-container.open .fab-toggle {
+  padding: 0.3rem;
+}
+
 .fab-toggle {
   display: flex;
   background-color: #eee;

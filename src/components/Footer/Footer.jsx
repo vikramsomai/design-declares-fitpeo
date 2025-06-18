@@ -43,7 +43,12 @@ function Footer({ menuOpen }) {
               receive further updates.
             </p>
             <div className="footer-button">
-              <button className="footer-btn">Subscribe</button>
+              <button
+                className="footer-btn"
+                style={{ padding: "1rem 2rem", borderRadius: "30px" }}
+              >
+                Subscribe
+              </button>
             </div>
           </div>
 

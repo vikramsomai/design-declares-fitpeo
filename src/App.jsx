@@ -5,7 +5,7 @@ import FabMenu from "./components/FabMenu/FabMenu";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
-
+import Article from "./pages/Article/Article";
 import "./App.css";
 
 import Footer from "./components/Footer/Footer";
@@ -66,6 +66,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/latest" element={<Latest />} />
+              <Route path="/latest/:slug" element={<Article />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </div>

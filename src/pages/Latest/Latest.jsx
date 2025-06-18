@@ -1,6 +1,8 @@
 import { AnimatedSection } from "../../components/AnimatedSection";
 import { useState } from "react";
 import { latestData } from "../../data/latestData";
+import { useNavigate } from "react-router-dom";
+import { slugify } from "../../utils/slugify.js";
 import "./Latest.css";
 import Header from "../../components/Header/Header";
 
@@ -12,6 +14,7 @@ export default function Latest() {
   const [selectedChapter, setSelectedChapter] = useState("All");
   const [isAnimating, setIsAnimating] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
+  const navigate = useNavigate();
 
   const handleCategoryChange = (category) => {
     if (category !== selectedCategory) {
@@ -99,44 +102,47 @@ export default function Latest() {
                   <p>No content found for the selected filters.</p>
                 </div>
               ) : (
-                filteredData.map((item, index) => (
-                  <AnimatedSection animation="slideUp" delay={200}>
-                    <div
+                filteredData.map((item, index) => {
+                  const slug = slugify(item.title);
+                  return (
+                    <AnimatedSection
+                      animation="slideUp"
+                      delay={200}
                       key={`${item.id}-${animationKey}`}
-                      className="content-card"
-                      style={{
-                        animationDelay: `${index * 0.1}s`,
-                      }}
                     >
-                      <div className="card-image-container">
-                        <img
-                          src={item.image || "/placeholder.svg"}
-                          alt={item.title}
-                          style={{ width: "400px" }}
-                          className="card-image"
-                        />
-                      </div>
-
-                      {/* Content */}
-                      <div className="card-content">
-                        {/* Tags */}
-                        <div className="card-tags">
-                          <span className="tag">{item.category}</span>
-                          <span className="tag">{item.chapter}</span>
-                          <span className="date-time">
-                            {item.date}, {item.time}
-                          </span>
+                      <div
+                        className="content-card"
+                        onClick={() => navigate(`/latest/${slug}`)}
+                        style={{
+                          animationDelay: `${index * 0.1}s`,
+                          cursor: "pointer",
+                        }}
+                      >
+                        <div className="card-image-container">
+                          <img
+                            src={item.image || "/placeholder.svg"}
+                            alt={item.title}
+                            style={{ width: "400px" }}
+                            className="card-image"
+                          />
                         </div>
 
-                        {/* Title */}
-                        <h3 className="card-title">{item.title}</h3>
+                        <div className="card-content">
+                          <div className="card-tags">
+                            <span className="tag">{item.category}</span>
+                            <span className="tag">{item.chapter}</span>
+                            <span className="date-time">
+                              {item.date}, {item.time}
+                            </span>
+                          </div>
 
-                        {/* Description */}
-                        <p className="card-description">{item.description}</p>
+                          <h3 className="card-title">{item.title}</h3>
+                          <p className="card-description">{item.description}</p>
+                        </div>
                       </div>
-                    </div>
-                  </AnimatedSection>
-                ))
+                    </AnimatedSection>
+                  );
+                })
               )}
             </div>
           </div>
