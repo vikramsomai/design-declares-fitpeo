@@ -24,8 +24,6 @@
   position: relative;
   padding: 5rem 2rem 2rem;
 }
-
-/* When overlay is active, blur and push back main and footer */
 .overlay-active .main-content,
 .overlay-active .footer {
   filter: blur(8px);
@@ -33,7 +31,6 @@
   pointer-events: none;
 }
 
-/* Overlay animation */
 .chapter-overlay {
   position: fixed;
   inset: 0;
@@ -71,7 +68,7 @@
     flex-direction: column;
   }
   .main-content {
-    margin-bottom: 45rem;
+    margin-bottom: 48rem;
   }
 }
 

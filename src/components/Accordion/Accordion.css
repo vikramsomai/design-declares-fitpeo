@@ -24,14 +24,12 @@ h3 {
   color: #ccc;
 }
 
-/* Animation wrapper */
 .accordion-content-wrapper {
   overflow: hidden;
   transition: max-height 0.4s ease;
   max-height: 0;
 }
 
-/* When open */
 .accordion-content-wrapper.open {
   max-height: 500px; /* adjust this to accommodate your content */
 }

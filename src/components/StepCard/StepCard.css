@@ -35,3 +35,14 @@
   line-height: 1.5;
   background-color: #eee;
 }
+
+@media (max-width: 768px) {
+  .step-title,
+  .step-number {
+    font-size: 2rem;
+    align-self: center;
+  }
+  .step-description {
+    font-size: 1rem;
+  }
+}

@@ -53,8 +53,7 @@ span {
   border-top: none;
   border-bottom: 1px solid #000;
   transition: 1s linear;
-
-  width: 100%; /* Optional: Ensures it stretches inside container */
+  width: 100%;
   animation: fadeIn 0.3s ease;
 }
 
@@ -189,7 +188,7 @@ li a {
 
 @media screen and (max-width: 475px) {
   .fab-container.open {
-    width: 340px;
+    width: 310px;
   }
 }
 .blurred {

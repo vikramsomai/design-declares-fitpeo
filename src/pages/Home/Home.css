@@ -179,6 +179,10 @@ span {
   .main-content {
     padding: 0px !important;
   }
+  .left h2 {
+    text-align: left;
+    padding-left: 0.5rem;
+  }
 }
 
 .emergency-container {

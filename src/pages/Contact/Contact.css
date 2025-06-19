@@ -153,7 +153,10 @@ input:autofill {
     width: 100%;
     max-width: 100%;
   }
-
+  .contact-header {
+    position: static;
+    top: 2rem;
+  }
   .form-group {
     flex-direction: column;
     align-items: flex-start;
@@ -174,7 +177,16 @@ input:autofill {
   .submit-button {
     width: 100%;
   }
-
+  .contact-header {
+    width: 100%;
+    padding-left: 20px;
+  }
+  .contact-header h1 {
+    text-align: left;
+  }
+  .contact-heading {
+    font-size: 2rem;
+  }
   .submit-button {
     max-width: 100%;
   }

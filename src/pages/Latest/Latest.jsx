@@ -48,7 +48,7 @@ export default function Latest() {
 
   return (
     <div className="latest-container-section" style={{ marginTop: "0rem" }}>
-      <div className="main-content">
+      <div className="main-content-latest">
         <Header />
 
         <div className="content-grid">
