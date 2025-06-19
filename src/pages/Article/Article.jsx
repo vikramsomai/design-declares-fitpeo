@@ -48,11 +48,7 @@ export default function Article() {
 
         <div className="article-content">
           <div className="content-section">
-            <h2 className="section-title">
-              Outlining the journey of how the Design Declares initiative was
-              integrated into the National College of Art and Design's
-              curriculum for BA Graphic Design students.
-            </h2>
+            <h2 className="section-title">{article.description}</h2>
 
             <div className="content-text">
               <p>

@@ -25,7 +25,7 @@
   flex-direction: column;
   gap: 0;
   letter-spacing: 1px;
-  font-size: clamp(3rem, 20vw, 11rem); /* Responsive font */
+  font-size: clamp(3rem, 20vw, 11rem);
 }
 
 span {
@@ -69,6 +69,9 @@ span {
   color: var(--text-brand-red);
 }
 
+.right-description {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+}
 .section-one {
   display: flex;
   flex-wrap: nowrap;
@@ -112,7 +115,9 @@ span {
   font-weight: 400;
   letter-spacing: 4px;
 }
-
+.description {
+  max-width: 400px;
+}
 .section-one .right,
 .section-two .right {
   width: 100%;
@@ -142,7 +147,7 @@ span {
 
   .hero-content h1 {
     text-align: left;
-    font-size: clamp(6rem, 8vw, 6rem);
+    font-size: clamp(5rem, 8vw, 6rem);
   }
 
   .hero-right {
@@ -161,10 +166,16 @@ span {
     width: 100%;
     text-align: center;
   }
+  #latest-content {
+    flex-direction: column;
+  }
 
   .right {
     width: 100%;
   }
+}
+
+@media screen and (max-width: 425px) {
 }
 
 .emergency-container {

@@ -77,7 +77,7 @@ function Home() {
           <h2>This is Breakdown</h2>
         </div>
         <div className="right">
-          <p style={{ fontSize: "3.5rem" }}>
+          <p className="right-description">
             The science is settled. We are in an emergency of climate and
             nature. The world is past breaking point; the breakdown has begun...
           </p>
@@ -220,14 +220,14 @@ function Home() {
         </div>
         <div className="right">
           <AnimatedSection animation="scaleIn" delay={400}>
-            <div className="latest-container-section">
+            <div className="latest-container-section" id="latest-content">
               <div className="latest-card">
                 <div className="status">
                   <Chips name="Events" />
                   <Chips name="D! UK" />
                   <p>24.04.2025, 03 PM:30</p>
                 </div>
-                <div className="description" style={{ width: "400px" }}>
+                <div className="description">
                   <p>
                     SD4P Collective: How can Service Design drive meaningful
                     sustainability impact
@@ -248,14 +248,14 @@ function Home() {
             </div>
           </AnimatedSection>
           <AnimatedSection animation="scaleIn" delay={1200}>
-            <div className="latest-container-section">
+            <div className="latest-container-section" id="latest-content">
               <div className="latest-card">
                 <div className="status">
                   <Chips name="Events" />
                   <Chips name="D! UK" />
                   <p>24.04.2025, 03 PM:30</p>
                 </div>
-                <div className="description" style={{ width: "400px" }}>
+                <div className="description">
                   <p>
                     SD4P Collective: How can Service Design drive meaningful
                     sustainability impact
