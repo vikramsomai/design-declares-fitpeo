@@ -9,6 +9,48 @@ export const latestData = [
     date: "30.04.2025",
     time: "04 PM:30",
     image: "/latest1.webp",
+    content: [
+      {
+        type: "text",
+        value:
+          "This case study explores the integration of the Design Declares Ireland initiative into the curriculum of the BA Graphic Design programme at the National College of Art and Design (NCAD), Dublin. It aims to prepare students not only to become competent designers but also to become ethically aware practitioners.",
+      },
+      {
+        type: "text",
+        value:
+          "The Design Practices module is delivered annually to second-year Graphic Design students within the School of Design. The module introduces the historical, theoretical, cultural, and professional contexts of design practice and aims to enable students to apply creative methodologies for the documentation and presentation of work.",
+      },
+      {
+        type: "heading",
+        value: "Kicking Off the Module with Creative Activism",
+      },
+      {
+        type: "image",
+        value: "/article1.webp",
+        caption: "Students at the NCAD workshop on sustainable design",
+      },
+      {
+        type: "heading",
+        value: "Kicking Off the Module with Creative Activism",
+      },
+      // {
+      //   type: "list",
+      //   value: [
+      //     "Day One focused on eco-literacy and biases.",
+      //     "Day Two tackled sustainability challenges with design strategies.",
+      //   ],
+      // },
+
+      {
+        type: "quote",
+        value:
+          "Design is not just about aesthetics, it's about responsibility.",
+      },
+      {
+        type: "text",
+        value: "The module will be refined for the next academic year...",
+      },
+    ],
   },
   {
     id: "2",
@@ -20,6 +62,28 @@ export const latestData = [
     date: "24.04.2025",
     time: "03 PM:30",
     image: "/latest2.webp",
+    content: [
+      { type: "heading", value: "In short:" },
+      {
+        type: "list",
+        value: [
+          "The Service Designer for the Planet Collective (SD4P Collective) is an initiative facilitated by Design Declares",
+          "The SD4P held its first in-person session on 28 March 2025 at Imperial College London, gathering 30+ professionals and students.",
+          "We also reflected on how we run and organise ourselves as a collective, balancing learning and hands-on participation",
+          "The event was low-waste by design",
+          "Next SD4P meet-up: online Friday 2nd May 2025, 3pm BST.",
+        ],
+      },
+      {
+        type: "image",
+        value: "/article2.webp",
+        caption: "Students at the NCAD workshop on sustainable design",
+      },
+      {
+        type: "heading",
+        value: "Service Designers for The Planet Collective",
+      },
+    ],
   },
   {
     id: "3",
@@ -31,6 +95,23 @@ export const latestData = [
     date: "10.12.2024",
     time: "08 AM:37",
     image: "/latest3.webp",
+    content: [
+      {
+        type: "heading",
+        value:
+          "Driving Change Through Design: An Interview with Sasha Titchkosky, Founder of Koskela and Design Declares Australia Advisory Board Member",
+      },
+      {
+        type: "text",
+        value:
+          "In a world where Design holds immense power to influence systems and behaviour, Sasha Titchkosky, founder of Koskela and a Design Declares Australia advisory board member, shares insights on her organisation’s sustainability journey and the imperative role of Design in tackling the climate emergency. Koskela, known for its innovative approach to furniture and Design, has long been committed to sustainable practices and systemic change.",
+      },
+      {
+        type: "text",
+        value:
+          "What inspired you or Koskela to sign Design Declares? How does it align with your core values or mission?",
+      },
+    ],
   },
   {
     id: "4",

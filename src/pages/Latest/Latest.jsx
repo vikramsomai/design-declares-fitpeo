@@ -122,7 +122,6 @@ export default function Latest() {
                           <img
                             src={item.image || "/placeholder.svg"}
                             alt={item.title}
-                            style={{ width: "400px" }}
                             className="card-image"
                           />
                         </div>

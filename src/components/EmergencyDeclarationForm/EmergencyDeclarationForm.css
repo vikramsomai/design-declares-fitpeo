@@ -386,3 +386,7 @@ input {
 .select-items::-webkit-scrollbar-thumb:hover {
   background-color: #555555;
 }
+.form-input.error,
+.form-textarea.error {
+  border-color: #ff6b00 !important;
+}

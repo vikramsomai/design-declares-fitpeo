@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img src="/icon.svg" alt="Logo" />
+        <img src="/icon.svg" alt="Logo" className="logo-img" />
       </Link>
     </div>
   );

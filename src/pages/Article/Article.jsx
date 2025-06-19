@@ -1,4 +1,4 @@
-// pages/Latest/ArticlePage.jsx
+import { AnimatedSection } from "../../components/AnimatedSection";
 import { useParams } from "react-router-dom";
 import { latestData } from "../../data/latestData";
 import { slugify } from "../../utils/slugify";
@@ -7,101 +7,123 @@ import Header from "../../components/Header/Header";
 
 export default function Article() {
   const { slug } = useParams();
-
   const article = latestData.find((item) => slugify(item.title) === slug);
 
-  if (!article) {
-    return <h2>Article not found</h2>;
-  }
+  if (!article) return <h2>Article not found</h2>;
 
   return (
     <div className="article-container">
-      <header className="header">
-        <Header />
-      </header>
+      <Header />
 
-      {/* Main Content */}
       <main className="main-content-article">
         <div className="article-header">
-          <h1 className="article-title">{article.title}</h1>
-
-          <div className="article-meta">
-            <span className="badge">{article.category}</span>
-            <span className="badge">{article.chapter}</span>
-            <span className="date">
-              {article.date} {article.time}
-            </span>
-            <button className="share-btn">Share Article</button>
-          </div>
+          <AnimatedSection animation="slideUp" delay={200}>
+            <h1 className="article-title">{article.title}</h1>
+          </AnimatedSection>
+          <AnimatedSection animation="slideUp" delay={200}>
+            <div className="article-meta">
+              <span className="chip">{article.category}</span>
+              <span className="chip">{article.chapter}</span>
+              <span className="date">
+                {article.date} {article.time}
+              </span>
+              <button className="share-btn">Share Article</button>
+            </div>
+          </AnimatedSection>
         </div>
 
-        {/* Hero Image Section */}
-        <div className="hero-section">
+        <AnimatedSection animation="slideUp" delay={200}>
           <div className="hero-image-container">
             <img
               src={article.image}
-              alt="Books with sustainability text overlay"
+              alt={article.title}
               className="hero-image"
             />
           </div>
-        </div>
+        </AnimatedSection>
 
         <div className="article-content">
-          <div className="content-section">
-            <h2 className="section-title">{article.description}</h2>
+          <AnimatedSection animation="slideUp" delay={300}>
+            <h2 className="section-title-about">{article.description}</h2>
+          </AnimatedSection>
 
-            <div className="content-text">
-              <p>
-                This case study explores the integration of the Design Declares
-                Ireland initiative into the curriculum of the BA Graphic Design
-                programme at the National College of Art and Design (NCAD),
-                Dublin. It aims to prepare students not only to become competent
-                designers but also to become ethically aware practitioners.
-              </p>
+          {/* Dynamically render the content blocks */}
+          {article.content?.map((block, index) => {
+            switch (block.type) {
+              case "heading":
+                return (
+                  <AnimatedSection
+                    animation="slideUp"
+                    delay={300 + index * 50}
+                    key={index}
+                  >
+                    <h3 className="content-heading">{block.value}</h3>
+                  </AnimatedSection>
+                );
 
-              <p>
-                The <em>Design Practices</em> module is delivered annually to
-                second-year Graphic Design students within the School of Design.
-                The module introduces the historical, theoretical, cultural, and
-                professional contexts of design practice and aims to enable
-                students to apply creative methodologies for the documentation
-                and presentation of work.
-              </p>
-            </div>
-          </div>
+              case "text":
+                return (
+                  <AnimatedSection
+                    animation="slideUp"
+                    delay={300 + index * 50}
+                    key={index}
+                  >
+                    <p className="content-text">{block.value}</p>
+                  </AnimatedSection>
+                );
 
-          <div className="content-section">
-            <h3 className="subsection-title">
-              Kicking off the module with Creative Activism
-            </h3>
+              case "image":
+                return (
+                  <AnimatedSection
+                    animation="slideUp"
+                    delay={300 + index * 50}
+                    key={index}
+                  >
+                    <div className="hero-image-container">
+                      <img
+                        src={block.value}
+                        alt={block.caption || "article"}
+                        className="hero-image"
+                      />
+                      {block.caption && (
+                        <p className="image-caption">{block.caption}</p>
+                      )}
+                    </div>
+                  </AnimatedSection>
+                );
 
-            <div className="content-text">
-              <p>
-                The integration of Design Declares Eight Acts of Emergency
-                framework into NCAD's Design Practices module marks an
-                ambitious, exploratory first step toward a more sustainable and
-                responsive design curriculum. As we continue to iterate and
-                develop the module, our focus remains on equipping students with
-                the tools, values, and frameworks necessary to navigate and
-                shape a complex, interdependent world.
-              </p>
+              case "quote":
+                return (
+                  <AnimatedSection
+                    animation="slideUp"
+                    delay={300 + index * 50}
+                    key={index}
+                  >
+                    <blockquote className="content-quote">
+                      “{block.value}”
+                    </blockquote>
+                  </AnimatedSection>
+                );
 
-              <p>
-                By embedding sustainability not as a siloed topic but as a
-                foundational mindset, we hope our evolving model offers a useful
-                case study for others seeking to integrate sustainability
-                meaningfully within creative education; flexible, reflective,
-                and open to ongoing transformation.
-              </p>
+              case "list":
+                return (
+                  <AnimatedSection
+                    animation="slideUp"
+                    delay={300 + index * 50}
+                    key={index}
+                  >
+                    <ul className="article-content-list">
+                      {block.value.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </AnimatedSection>
+                );
 
-              <ul className="content-list">
-                <li>
-                  Collect feedback, reflect and adapt iterations of the
-                  Educators Toolkit.
-                </li>
-              </ul>
-            </div>
-          </div>
+              default:
+                return null;
+            }
+          })}
 
           <div className="article-footer">
             <button className="share-btn">Share Article</button>

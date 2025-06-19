@@ -3,6 +3,7 @@ import "./Contact.css";
 import Header from "../../components/Header/Header";
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown";
 import { AnimatedSection } from "../../components/AnimatedSection";
+
 function Contact() {
   const formRef = useRef(null);
 
@@ -16,8 +17,8 @@ function Contact() {
       if (!field.checkValidity()) {
         const group = field.closest(".form-group");
         if (group) group.classList.add("error");
-
         field.focus();
+
         return;
       } else {
         const group = field.closest(".form-group");
@@ -25,7 +26,6 @@ function Contact() {
       }
     }
 
-    alert("Form submitted successfully!");
     form.reset();
   };
 
@@ -52,6 +52,7 @@ function Contact() {
                 <label htmlFor="name">Name:*</label>
                 <input type="text" id="name" name="name" required />
               </div>
+
               <div className="form-group">
                 <label htmlFor="email">Email:*</label>
                 <input type="email" id="email" name="email" required />
@@ -63,6 +64,7 @@ function Contact() {
                 required={true}
                 options={["D! UK", "D! Ireland", "D! Brasil", "D! Australia"]}
               />
+
               <CustomDropdown
                 label="Enquiry type"
                 name="enquiry"

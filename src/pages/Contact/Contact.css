@@ -183,3 +183,8 @@ input:autofill {
     width: 100%;
   }
 }
+.form-group.error,
+.form-group.error,
+.form-group.error {
+  border: 2px solid var(--text-brand-red);
+}

@@ -67,41 +67,24 @@ export default function EmergencyDeclarationForm() {
   };
 
   const validateForm = () => {
-    const newErrors = {};
-    let isValid = true;
+    for (const field of Object.keys(formData)) {
+      const value = formData[field];
+      const isFieldValid = validateField(field, value);
 
-    // Mark all fields as touched
-    const newTouched = {};
-    Object.keys(formData).forEach((key) => {
-      newTouched[key] = true;
-    });
-    setTouched(newTouched);
+      if (!isFieldValid) {
+        setTouched((prev) => ({ ...prev, [field]: true }));
 
-    // Validate required fields
-    if (!formData.website) {
-      isValid = false;
+        const inputEl = document.querySelector(`[name="${field}"]`);
+        if (inputEl) {
+          inputEl.focus();
+          inputEl.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        return false; // stop after first error
+      }
     }
 
-    if (!formData.country) {
-      isValid = false;
-    }
-
-    if (!formData.discipline) {
-      isValid = false;
-    }
-
-    if (!formData.email) {
-      isValid = false;
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      isValid = false;
-    }
-
-    if (!formData.dataConsent) {
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
+    return true;
   };
 
   const handleSubmit = (e) => {
@@ -192,6 +175,7 @@ export default function EmergencyDeclarationForm() {
                 </label>
                 <input
                   type="text"
+                  name="businessName"
                   value={formData.businessName}
                   onChange={(e) =>
                     handleInputChange("businessName", e.target.value)
@@ -215,6 +199,7 @@ export default function EmergencyDeclarationForm() {
                 </label>
                 <input
                   type="text"
+                  name="individualName"
                   value={formData.individualName}
                   onChange={(e) =>
                     handleInputChange("individualName", e.target.value)
@@ -239,6 +224,7 @@ export default function EmergencyDeclarationForm() {
                 </label>
                 <input
                   type="text"
+                  name="institutionName"
                   value={formData.institutionName}
                   onChange={(e) =>
                     handleInputChange("institutionName", e.target.value)
@@ -279,13 +265,13 @@ export default function EmergencyDeclarationForm() {
               </div>
             )}
 
-            {/* Website Field - Always visible */}
             <div className="form-group">
               <label htmlFor="" style={{ width: "80px" }}>
                 Website:*
               </label>
               <input
                 type="url"
+                name="website"
                 value={formData.website}
                 onChange={(e) => handleInputChange("website", e.target.value)}
                 onBlur={() => handleBlur("website")}

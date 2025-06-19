@@ -46,7 +46,7 @@ export default function About() {
               <AnimatedSection animation="scaleIn" delay={1200}>
                 <button className="btn">See Global Declarations</button>
               </AnimatedSection>
-              <div className="content-grid">
+              <div className="about-content-grid">
                 <div className="column">
                   <AnimatedSection animation="slideUp" delay={200}>
                     <p className="text-base">
@@ -71,7 +71,7 @@ export default function About() {
               <AnimatedSection animation="scaleIn" delay={1200}>
                 <button className="btn">Declare Emergency Now</button>
               </AnimatedSection>
-              <div className="content-grid">
+              <div className="about-content-grid">
                 <div className="column">
                   <AnimatedSection animation="slideUp" delay={200}>
                     <ul className="text-base">
@@ -137,7 +137,7 @@ export default function About() {
                 </p>
               </AnimatedSection>
 
-              <div className="content-grid">
+              <div className="about-content-grid">
                 <div className="column">
                   <AnimatedSection animation="slideUp" delay={200}>
                     <p className="text-base">

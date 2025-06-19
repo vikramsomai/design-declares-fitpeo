@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .article-container {
   min-height: 100vh;
   margin-left: auto;
@@ -85,7 +79,7 @@
 .article-header {
   max-width: 64rem;
   padding-left: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .article-title {
@@ -93,7 +87,7 @@
   font-weight: 300;
   line-height: 1.2;
   max-width: 40rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
 
@@ -102,32 +96,31 @@
   flex-wrap: wrap;
   max-width: 40rem;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .badge {
-  background-color: #1f1f1f;
   color: #ffffff;
-  border: 1px solid #404040;
   padding: 0.25rem 1rem;
+  outline: none;
   border-radius: 9999px;
   font-size: 0.875rem;
 }
 
 .date {
   color: #a0a0a0;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .share-btn {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
   color: #000000;
   border: none;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 9999px;
   cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 600;
   margin-left: auto;
   transition: background-color 0.2s ease;
 }
@@ -167,17 +160,27 @@
 .article-content {
   max-width: 55rem;
 }
-
+.share-btn:hover {
+  background-color: var(--text-brand-red);
+}
 .content-section {
   margin-bottom: 2rem;
 }
 
-.section-title {
+.section-title-about {
   font-size: clamp(0.75rem, 8vw, 3.5rem);
   font-weight: 300;
   line-height: 1.3;
+  margin: 1rem 1.5rem;
   margin-bottom: 1.5rem;
   color: #ffffff;
+}
+.content-text,
+.content-heading {
+  margin: 1rem 1.5rem;
+}
+.content-heading {
+  font-size: 2.1rem;
 }
 
 .subsection-title {
@@ -200,19 +203,18 @@
   font-style: italic;
 }
 
-.content-list {
+.article-content-list {
   list-style-type: disc;
   padding-left: 1.5rem;
   color: #cccccc;
 }
 
-.content-list li {
+.article-content-list li {
   margin-bottom: 0.5rem;
 }
 
-/* Article Footer */
 .article-footer {
-  border-top: 1px solid #1f1f1f;
+  border-top: 2px solid #fff;
   padding-top: 2rem;
   margin-top: 2rem;
 }
@@ -224,7 +226,7 @@
     font-weight: normal;
   }
 
-  .section-title {
+  .section-title-about {
     font-size: 3.5rem;
   }
 
@@ -252,14 +254,14 @@
   }
 
   .article-meta {
-    flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .share-btn {
     margin-left: 0;
-    align-self: stretch;
+    font-size: 1rem;
+    /* align-self: stretch; */
   }
 
   .header-actions {
@@ -269,4 +271,11 @@
   .logo {
     font-size: 2rem;
   }
+}
+.content-image {
+  height: 30em;
+}
+.gallery-image img {
+  height: auto;
+  width: 100%;
 }

@@ -176,6 +176,9 @@ span {
 }
 
 @media screen and (max-width: 425px) {
+  .main-content {
+    padding: 0px !important;
+  }
 }
 
 .emergency-container {

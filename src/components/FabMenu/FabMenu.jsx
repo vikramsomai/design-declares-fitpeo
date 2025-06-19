@@ -67,9 +67,9 @@ function FabMenu({ isOpen, setIsOpen, setShowChapterOverlay }) {
                   viewBox="0 0 22 23"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="menu-icon"
+                  className="menu-icon"
                 >
                   <path d="M1 10.75L11 2L21 10.75V22H1V10.75Z"></path>
                 </svg>{" "}
@@ -84,9 +84,9 @@ function FabMenu({ isOpen, setIsOpen, setShowChapterOverlay }) {
                   viewBox="0 0 22 22"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="menu-icon"
+                  className="menu-icon"
                 >
                   <rect x="9" y="9" width="4" height="12"></rect>
                   <rect x="9" y="1" width="4" height="4"></rect>
@@ -102,9 +102,9 @@ function FabMenu({ isOpen, setIsOpen, setShowChapterOverlay }) {
                   viewBox="0 0 20 22"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="menu-icon"
+                  className="menu-icon"
                 >
                   <line x1="4.375" y1="5.55646" x2="11.125" y2="5.55646"></line>
                   <line x1="4.375" y1="10.0016" x2="11.125" y2="10.0016"></line>
@@ -122,9 +122,9 @@ function FabMenu({ isOpen, setIsOpen, setShowChapterOverlay }) {
                   viewBox="0 0 22 18"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="menu-icon"
+                  className="menu-icon"
                 >
                   <rect x="1" y="1" width="20" height="16"></rect>
                   <path d="M21 2L11 10L1 2"></path>
@@ -145,7 +145,7 @@ function FabMenu({ isOpen, setIsOpen, setShowChapterOverlay }) {
                 viewBox="0 0 22 22"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
                 xmlns="http://www.w3.org/2000/svg"
                 className="menu-icon"
               >
