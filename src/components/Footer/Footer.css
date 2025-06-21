@@ -212,3 +212,8 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 425px) {
+  .footer-columns {
+    gap: 0.5rem;
+  }
+}

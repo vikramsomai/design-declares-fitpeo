@@ -367,6 +367,10 @@ input {
   .consent-section.visible {
     max-height: 400px;
   }
+  #submit-btn {
+    margin-left: 0rem;
+    padding: 1rem 2rem;
+  }
 }
 
 /* Scrollbar styling for dropdowns */

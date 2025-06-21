@@ -159,7 +159,7 @@
 .card-image-container {
   position: relative;
   overflow: hidden;
-  width: 400px;
+  /* width: 400px; */
   /* height: 450px; */
   transition: transform 0.3s ease;
 }
@@ -245,6 +245,9 @@
   .card-title {
     font-size: 1.875rem;
   }
+  .card-image-container {
+    width: 400px;
+  }
 }
 
 .card-title:hover {
@@ -292,6 +295,9 @@
     font-size: 1.125rem;
     font-weight: 400;
   }
+  .card-image {
+    object-fit: cover;
+  }
 
   .card-title {
     font-size: 1.25rem;
@@ -306,9 +312,9 @@
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
   }
-  .card-image-container {
+  /* .card-image-container {
     max-width: 300px;
-  }
+  } */
   .content-list {
     padding-left: 0rem;
   }

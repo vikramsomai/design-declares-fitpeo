@@ -162,8 +162,6 @@ export default function EmergencyDeclarationForm() {
                 As a team or department
               </label>
             </div>
-
-            {/* <div className="checkbox-row"></div> */}
           </div>
 
           <div className="form-fields">
@@ -585,9 +583,8 @@ export default function EmergencyDeclarationForm() {
               </a>
             </div>
 
-            {/* Submit Button */}
             <div className="submit-section visible">
-              <button type="submit" className="submit-button">
+              <button type="submit" className="submit-button" id="submit-btn">
                 Declare Emergency Now
               </button>
             </div>
